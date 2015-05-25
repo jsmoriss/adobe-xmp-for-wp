@@ -1,3 +1,9 @@
+
+Strict Standards: Redefining already defined constructor for class nggdb in /var/www/wpadm/wordpress/wp-content/plugins/nextgen-gallery/lib/ngg-db.php on line 60
+
+Strict Standards: Redefining already defined constructor for class nggPostThumbnail in /var/www/wpadm/wordpress/wp-content/plugins/nextgen-gallery/lib/post-thumbnail.php on line 26
+
+Strict Standards: Redefining already defined constructor for class nggNavigation in /var/www/wpadm/wordpress/wp-content/plugins/nextgen-gallery/lib/navigation.php on line 50
 <h1>Adobe XMP for WP</h1>
 
 <table>

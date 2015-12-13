@@ -116,7 +116,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Changelog ==
 
-= v1.2 =
+= Version 1.2 =
 
 * Files missing variable declaration before appending a value.
 

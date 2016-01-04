@@ -1,17 +1,15 @@
 <?php
 /*
- * Plugin Name: Adobe XMP for WP
+ * Plugin Name: JSM's Adobe XMP / IPTC for WP
  * Plugin URI: http://surniaulula.com/extend/plugins/adobe-xmp-for-wp/
  * Author: Jean-Sebastien Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Access Adobe XMP / IPTC information from Media Library and NextGEN Gallery images using a Shortcode or PHP Class
+ * Description: Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.
  * Requires At Least: 3.0
- * Tested Up To: 4.2.2
+ * Tested Up To: 4.4
  * Version: 1.2
- * 
- * Copyright 2012 - Jean-Sebastien Morisset - http://surniaulula.com/
  * 
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -22,6 +20,8 @@
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
+ * 
+ * Copyright 2012-2016 Jean-Sebastien Morisset (http://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) )
@@ -80,7 +80,8 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 						$this->xmp = $this->get_xmp_array( $xmp_raw );
 				}
 			}
-			if ( $ret_xmp == true ) return $this->xmp;
+			if ( $ret_xmp == true ) 
+				return $this->xmp;
 		}
 
 		function get_media_xmp( $pid, $ret_xmp = true ) {
@@ -88,7 +89,8 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			$xmp_raw = $this->get_xmp_raw( get_attached_file( $pid ) );
 			if ( ! empty( $xmp_raw ) ) 
 				$this->xmp = $this->get_xmp_array( $xmp_raw );
-			if ( $ret_xmp == true ) return $this->xmp;
+			if ( $ret_xmp == true ) 
+				return $this->xmp;
 		}
 
 		function get_xmp_array( &$xmp_raw ) {

@@ -1,5 +1,5 @@
-=== Adobe XMP for WP ===
-Plugin Name: Adobe XMP for WP
+=== JSM's Adobe XMP / IPTC for WP ===
+Plugin Name: JSM's Adobe XMP / IPTC for WP
 Plugin Slug: adobe-xmp-for-wp
 Contributors: jsmoriss
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
@@ -9,7 +9,7 @@ Requires At Least: 3.0
 Tested Up To: 4.4
 Stable Tag: 1.2
 
-Access Adobe XMP / IPTC information from Media Library and NextGEN Gallery images using a Shortcode or PHP Class.
+Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.
 
 == Description ==
 
@@ -34,17 +34,16 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 * Keywords
 * Hierarchical Keywords
 
-The *Adobe XMP for WP* plugin reads image files *progressively* (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also *cached on disk* to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the `$adobeXMP` global **class object** in your template(s), or using an `[xmp]` **shortcode** in your Posts or Pages.
-
-<!--more-->
+The plugin reads image files *progressively* (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also *cached on disk* to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the `$adobeXMP` global **class object** in your template(s) or using an `[xmp]` **shortcode** in your Posts or Pages.
 
 = Retrieve XMP data as an array =
 
 `
 global $adobeXMP;
 
-// $id can be media library image id, or nextgen gallery 
-// image id in the form of 'ngg-#'.
+/* $id can be a media library image id, or nextgen gallery 
+ * image id in the form of ngg-##.
+ */
 $xmp = $adobeXMP->get_xmp( $id );
 
 echo 'Taken by ', $xmp['Creator'], "\n";
@@ -76,41 +75,57 @@ The shortcode can also take a few additional arguments:
 
 * `include` (defaults to "all")
 
-Define which XMP elements to include, for example `[xmp id="101" include="Creator,Creator Email"]`. 
+Define which XMP elements to include, for example:
+
+`[xmp id="101" include="Creator,Creator Email"]`
 
 Please note that the `include` values are **case sensitive**.
 
 * `exclude` (defaults to none)
 
-Exclude some XMP elements, for example `[xmp id="101" exclude="Creator Email"]` to print all XMP elements, except for the "Creator Email".
+Exclude some XMP elements, for example to print all XMP elements, except for the "Creator Email":
+
+`[xmp id="101" exclude="Creator Email"]`
 
 * `show_title` (defaults to "yes")
 
-Toggle printing of the XMP element title, for example `[xmp id="101" show_title="no"]` only prints the `<dd>` values, not the `<dt>` titles.
+Toggle printing of the XMP element title, for example only prints the `<dd>` values, not the `<dt>` titles.
+
+`[xmp id="101" show_title="no"]`
 
 * `not_keyword` (defaults to none)
 
-Exclude a list of (case incensitive) keywords, for example `[xmp id="101" not_keyword="who,what,where"]`. 
+Exclude a list of (case incensitive) keywords, for example:
 
-To exclude a hierarchical keyword list, use hyphens between the keywords, for example `[xmp id="101" not_keyword="who,what,where,who-people-unknown"]`.
+`[xmp id="101" not_keyword="who,what,where"]`
+
+To exclude a hierarchical keyword list, use hyphens between the keywords, for example:
+
+`[xmp id="101" not_keyword="who,what,where,who-people-unknown"]`
 
 == Installation ==
 
-*Using the WordPress Dashboard*
+*Automated Install*
 
-1. Login to your weblog
-1. Go to Plugins
-1. Select Add New
-1. Search for *Adobe XMP for WP*
-1. Select Install
-1. Select Install Now
-1. Select Activate Plugin
+1. Go to the wp-admin/ section of your website
+1. Select the *Plugins* menu item
+1. Select the *Add New* sub-menu item
+1. In the *Search* box, enter the plugin name
+1. Click the *Search Plugins* button
+1. Click the *Install Now* link for the plugin
+1. Click the *Activate Plugin* link
 
-*Manual*
+*Semi-Automated Install*
 
-1. Download and unzip the plugin
-1. Upload the entire `adobe-xmp-for-wp/` folder to the `wp-content/plugins/` directory
-1. Activate the plugin through the Plugins menu in WordPress
+1. Download the plugin archive file
+1. Go to the wp-admin/ section of your website
+1. Select the *Plugins* menu item
+1. Select the *Add New* sub-menu item
+1. Click on *Upload* link (just under the Install Plugins page title)
+1. Click the *Browse...* button
+1. Navigate your local folders / directories and choose the zip file you downloaded previously
+1. Click on the *Install Now* button
+1. Click the *Activate Plugin* link
 
 == Frequently Asked Questions ==
 
@@ -118,5 +133,5 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 = Version 1.2 =
 
-* Files missing variable declaration before appending a value.
+* Fixed missing variable declaration before appending to it.
 

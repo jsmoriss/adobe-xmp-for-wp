@@ -1,8 +1,8 @@
-<h1>Adobe XMP for WP</h1>
+<h1>JSM&#039;s Adobe XMP / IPTC for WP</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>Adobe XMP for WP</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Access Adobe XMP / IPTC information from Media Library and NextGEN Gallery images using a Shortcode or PHP Class.</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Adobe XMP / IPTC for WP</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To</th><td>WordPress 4.4</td></tr>
@@ -36,16 +36,15 @@
 <li>Hierarchical Keywords</li>
 </ul>
 
-<p>The <em>Adobe XMP for WP</em> plugin reads image files <em>progressively</em> (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also <em>cached on disk</em> to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the <code>$adobeXMP</code> global <strong>class object</strong> in your template(s), or using an <code>[xmp]</code> <strong>shortcode</strong> in your Posts or Pages.</p>
-
-<!--more-->
+<p>The plugin reads image files <em>progressively</em> (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also <em>cached on disk</em> to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the <code>$adobeXMP</code> global <strong>class object</strong> in your template(s) or using an <code>[xmp]</code> <strong>shortcode</strong> in your Posts or Pages.</p>
 
 <h4>Retrieve XMP data as an array</h4>
 
 <pre><code>global $adobeXMP;
 
-// $id can be media library image id, or nextgen gallery 
-// image id in the form of 'ngg-#'.
+/* $id can be a media library image id, or nextgen gallery 
+ * image id in the form of ngg-##.
+ */
 $xmp = $adobeXMP-&gt;get_xmp( $id );
 
 echo 'Taken by ', $xmp['Creator'], "\n";
@@ -77,7 +76,10 @@ echo 'Taken by ', $xmp['Creator'], "\n";
 <li><code>include</code> (defaults to "all")</li>
 </ul>
 
-<p>Define which XMP elements to include, for example <code>[xmp id="101" include="Creator,Creator Email"]</code>.</p>
+<p>Define which XMP elements to include, for example:</p>
+
+<pre><code>[xmp id="101" include="Creator,Creator Email"]
+</code></pre>
 
 <p>Please note that the <code>include</code> values are <strong>case sensitive</strong>.</p>
 
@@ -85,43 +87,61 @@ echo 'Taken by ', $xmp['Creator'], "\n";
 <li><code>exclude</code> (defaults to none)</li>
 </ul>
 
-<p>Exclude some XMP elements, for example <code>[xmp id="101" exclude="Creator Email"]</code> to print all XMP elements, except for the "Creator Email".</p>
+<p>Exclude some XMP elements, for example to print all XMP elements, except for the "Creator Email":</p>
+
+<pre><code>[xmp id="101" exclude="Creator Email"]
+</code></pre>
 
 <ul>
 <li><code>show_title</code> (defaults to "yes")</li>
 </ul>
 
-<p>Toggle printing of the XMP element title, for example <code>[xmp id="101" show_title="no"]</code> only prints the <code>&lt;dd&gt;</code> values, not the <code>&lt;dt&gt;</code> titles.</p>
+<p>Toggle printing of the XMP element title, for example only prints the <code>&lt;dd&gt;</code> values, not the <code>&lt;dt&gt;</code> titles.</p>
+
+<pre><code>[xmp id="101" show_title="no"]
+</code></pre>
 
 <ul>
 <li><code>not_keyword</code> (defaults to none)</li>
 </ul>
 
-<p>Exclude a list of (case incensitive) keywords, for example <code>[xmp id="101" not_keyword="who,what,where"]</code>.</p>
+<p>Exclude a list of (case incensitive) keywords, for example:</p>
 
-<p>To exclude a hierarchical keyword list, use hyphens between the keywords, for example <code>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]</code>.</p>
+<pre><code>[xmp id="101" not_keyword="who,what,where"]
+</code></pre>
+
+<p>To exclude a hierarchical keyword list, use hyphens between the keywords, for example:</p>
+
+<pre><code>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]
+</code></pre>
 
 
 <h2>Installation</h2>
 
-<p><em>Using the WordPress Dashboard</em></p>
+<p><em>Automated Install</em></p>
 
 <ol>
-<li>Login to your weblog</li>
-<li>Go to Plugins</li>
-<li>Select Add New</li>
-<li>Search for <em>Adobe XMP for WP</em></li>
-<li>Select Install</li>
-<li>Select Install Now</li>
-<li>Select Activate Plugin</li>
+<li>Go to the wp-admin/ section of your website</li>
+<li>Select the <em>Plugins</em> menu item</li>
+<li>Select the <em>Add New</em> sub-menu item</li>
+<li>In the <em>Search</em> box, enter the plugin name</li>
+<li>Click the <em>Search Plugins</em> button</li>
+<li>Click the <em>Install Now</em> link for the plugin</li>
+<li>Click the <em>Activate Plugin</em> link</li>
 </ol>
 
-<p><em>Manual</em></p>
+<p><em>Semi-Automated Install</em></p>
 
 <ol>
-<li>Download and unzip the plugin</li>
-<li>Upload the entire <code>adobe-xmp-for-wp/</code> folder to the <code>wp-content/plugins/</code> directory</li>
-<li>Activate the plugin through the Plugins menu in WordPress</li>
+<li>Download the plugin archive file</li>
+<li>Go to the wp-admin/ section of your website</li>
+<li>Select the <em>Plugins</em> menu item</li>
+<li>Select the <em>Add New</em> sub-menu item</li>
+<li>Click on <em>Upload</em> link (just under the Install Plugins page title)</li>
+<li>Click the <em>Browse...</em> button</li>
+<li>Navigate your local folders / directories and choose the zip file you downloaded previously</li>
+<li>Click on the <em>Install Now</em> button</li>
+<li>Click the <em>Activate Plugin</em> link</li>
 </ol>
 
 

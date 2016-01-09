@@ -62,7 +62,7 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 `
 <dl class="xmp_shortcode">
 <dt class="xmp_credit">Credit</dt>
-<dd class="xmp_credit">Jean-Sebastien Morisset</dd>
+<dd class="xmp_credit">JS Morisset</dd>
 <dt class="xmp_source">Source</dt>
 <dd class="xmp_source">Underwater Focus</dd>
 <dt class="xmp_hierarchical_keywords">Hierarchical Keywords</dt>

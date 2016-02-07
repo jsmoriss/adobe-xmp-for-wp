@@ -1,7 +1,7 @@
 === JSM's Adobe XMP / IPTC for WP ===
 Plugin Name: JSM's Adobe XMP / IPTC for WP
 Plugin Slug: adobe-xmp-for-wp
-Contributors: JS Morisset
+Contributors: jsmoriss
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt

@@ -129,29 +129,48 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Frequently Asked Questions ==
 
+= Frequently Asked Questions =
+
+* None
+
+== Other Notes ==
+
+= Additional Documentation =
+
+* None
+
+== Screenshots ==
+
 == Changelog ==
 
-= Version 1.2.1 (2016/01/08) =
+= Repositories =
 
-* **New Features**
-	* *None*
-* **Improvements**
+* [GitHub](https://github.com/jsmoriss/adobe-xmp-for-wp)
+* [WordPress.org](https://wordpress.org/plugins/adobe-xmp-for-wp/developers/)
+
+= Changelog / Release Notes =
+
+**Version 1.2.1 (2016/01/08)**
+
+* *New Features*
+	* None
+* *Improvements*
 	* Updated the plugin name and assets (icons and banner).
-* **Bugfixes**
-	* *None*
-* **Developer Notes**
-	* *None*
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
 
-= Version 1.2 =
+**Version 1.2**
 
-* **New Features**
-	* *None*
-* **Improvements**
-	* *None*
-* **Bugfixes**
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
 	* Fixed missing variable declaration before appending to it.
-* **Developer Notes**
-	* *None*
+* *Developer Notes*
+	* None
 
 == Upgrade Notice ==
 

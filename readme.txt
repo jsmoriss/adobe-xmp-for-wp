@@ -161,17 +161,6 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 * *Developer Notes*
 	* None
 
-**Version 1.2**
-
-* *New Features*
-	* None
-* *Improvements*
-	* None
-* *Bugfixes*
-	* Fixed missing variable declaration before appending to it.
-* *Developer Notes*
-	* None
-
 == Upgrade Notice ==
 
 = 1.2.1 =

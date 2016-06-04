@@ -1,7 +1,7 @@
-<h1>JSM&#039;s Adobe XMP / IPTC for WP</h1>
+<h1>JSM&#039;s Adobe XMP / IPTC for WordPress</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Adobe XMP / IPTC for WP</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Adobe XMP / IPTC for WordPress</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.2.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires At Least</th><td>WordPress 3.0</td></tr>
@@ -50,7 +50,7 @@ $xmp = $adobeXMP-&gt;get_xmp( $id );
 echo 'Taken by ', $xmp['Creator'], "\n";
 </code></pre>
 
-<p><a href="http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/">You can read more about Adobe XMP for WP's class methods here</a>.</p>
+<p><a href="http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/">You can read more about the class methods here</a>.</p>
 
 <h4>Include a shortcode in your Post or Page</h4>
 

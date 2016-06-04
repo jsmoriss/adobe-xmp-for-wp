@@ -1,5 +1,5 @@
-=== JSM's Adobe XMP / IPTC for WP ===
-Plugin Name: JSM's Adobe XMP / IPTC for WP
+=== JSM's Adobe XMP / IPTC for WordPress ===
+Plugin Name: JSM's Adobe XMP / IPTC for WordPress
 Plugin Slug: adobe-xmp-for-wp
 Contributors: jsmoriss
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
@@ -49,7 +49,7 @@ $xmp = $adobeXMP->get_xmp( $id );
 echo 'Taken by ', $xmp['Creator'], "\n";
 `
 
-[You can read more about Adobe XMP for WP's class methods here](http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/).
+[You can read more about the class methods here](http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/).
 
 = Include a shortcode in your Post or Page =
 

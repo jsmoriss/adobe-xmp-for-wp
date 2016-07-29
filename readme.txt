@@ -165,5 +165,5 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 = 1.2.1 =
 
-2016/01/08 - Updated the plugin name and assets (icons and banner).
+(2016/01/08) Updated the plugin name and assets (icons and banner).
 

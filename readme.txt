@@ -150,12 +150,14 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 = Changelog / Release Notes =
 
-**Version 1.2.1 (2016/01/08)**
+**Version 1.2.1-1 (2016/08/02)**
+
+Maintenance release.
 
 * *New Features*
 	* None
 * *Improvements*
-	* Updated the plugin name and assets (icons and banner).
+	* None
 * *Bugfixes*
 	* None
 * *Developer Notes*
@@ -163,7 +165,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Upgrade Notice ==
 
-= 1.2.1 =
+= 1.2.1-1 =
 
-(2016/01/08) Updated the plugin name and assets (icons and banner).
+(2016/08/02) Maintenance release.
 

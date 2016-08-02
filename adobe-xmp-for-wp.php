@@ -9,7 +9,7 @@
  * Description: Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.
  * Requires At Least: 3.0
  * Tested Up To: 4.6
- * Version: 1.2.1
+ * Version: 1.2.1-1
  * 
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software

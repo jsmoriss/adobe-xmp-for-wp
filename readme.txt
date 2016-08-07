@@ -1,10 +1,14 @@
 === JSM's Adobe XMP / IPTC for WordPress ===
 Plugin Name: JSM's Adobe XMP / IPTC for WordPress
 Plugin Slug: adobe-xmp-for-wp
-Contributors: jsmoriss
-Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
+Text Domain: adobe-xmp-for-wp
+Domain Path: /languages
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.txt
+Donate Link:
+Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
+Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
+Contributors: jsmoriss
 Requires At Least: 3.0
 Tested Up To: 4.6
 Stable Tag: 1.2.1-1

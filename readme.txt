@@ -10,7 +10,7 @@ Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
 Contributors: jsmoriss
 Requires At Least: 3.0
-Tested Up To: 4.6
+Tested Up To: 4.6.1
 Stable Tag: 1.2.1-1
 
 Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.

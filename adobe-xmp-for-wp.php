@@ -1,14 +1,17 @@
 <?php
 /*
  * Plugin Name: JSM's Adobe XMP / IPTC for WordPress
+ * Text Domain: adobe-xmp-for-wp
+ * Domain Path: /languages
  * Plugin URI: http://surniaulula.com/extend/plugins/adobe-xmp-for-wp/
+ * Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
  * Author: JS Morisset
  * Author URI: http://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
  * Description: Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.
  * Requires At Least: 3.0
- * Tested Up To: 4.6
+ * Tested Up To: 4.6.1
  * Version: 1.2.1-1
  * 
  * This script is free software; you can redistribute it and/or modify it under

@@ -4,7 +4,7 @@ Plugin Slug: adobe-xmp-for-wp
 Text Domain: adobe-xmp-for-wp
 Domain Path: /languages
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl.txt
+License URI: https://www.gnu.org/licenses/gpl.txt
 Donate Link:
 Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data

@@ -40,6 +40,10 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 
 The plugin reads image files *progressively* (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also *cached on disk* to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the `$adobeXMP` global **class object** in your template(s) or using an `[xmp]` **shortcode** in your Posts or Pages.
 
+<blockquote>
+<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+</blockquote>
+
 = Retrieve XMP data as an array =
 
 `
@@ -53,7 +57,7 @@ $xmp = $adobeXMP->get_xmp( $id );
 echo 'Taken by ', $xmp['Creator'], "\n";
 `
 
-[You can read more about the class methods here](http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/).
+[You can read more about the class methods here](https://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/).
 
 = Include a shortcode in your Post or Page =
 

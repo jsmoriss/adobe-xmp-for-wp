@@ -39,6 +39,10 @@
 
 <p>The plugin reads image files <em>progressively</em> (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also <em>cached on disk</em> to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the <code>$adobeXMP</code> global <strong>class object</strong> in your template(s) or using an <code>[xmp]</code> <strong>shortcode</strong> in your Posts or Pages.</p>
 
+<blockquote>
+<p>There are no plugin settings to update or adjust &mdash; simply install and activate the plugin.</p>
+</blockquote>
+
 <h4>Retrieve XMP data as an array</h4>
 
 <pre><code>global $adobeXMP;
@@ -51,7 +55,7 @@ $xmp = $adobeXMP-&gt;get_xmp( $id );
 echo 'Taken by ', $xmp['Creator'], "\n";
 </code></pre>
 
-<p><a href="http://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/">You can read more about the class methods here</a>.</p>
+<p><a href="https://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/">You can read more about the class methods here</a>.</p>
 
 <h4>Include a shortcode in your Post or Page</h4>
 

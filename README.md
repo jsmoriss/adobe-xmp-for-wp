@@ -47,8 +47,16 @@
 
 <pre><code>global $adobeXMP;
 
-/* $id can be a media library image id, or nextgen gallery 
- * image id in the form of ngg-##.
+/*
+ * Some default class properties can be changed.
+ */
+$adobeXMP-&gt;use_cache = true;    // default
+$adobeXMP-&gt;max_size = 512000;   // default
+$adobeXMP-&gt;chunk_size = 65536;  // default
+
+/*
+ * $id can be a WordPress Media Library image ID,
+ * or NextGEN Gallery image ID in the form of ngg-##.
  */
 $image_xmp = $adobeXMP-&gt;get_xmp( $id );
 
@@ -81,28 +89,32 @@ echo 'Taken by ', $image_xmp['Creator'], "\n";
 
 <p>Define which XMP elements to include, for example:</p>
 
-<pre><code>[xmp id="101" include="Creator,Creator Email"]
+<pre><code>[xmp id="101" include="creator,creator email"]
 </code></pre>
-
-<p>Please note that the <code>include</code> values are <strong>case sensitive</strong>.</p>
 
 <ul>
 <li><code>exclude</code> (defaults to none)</li>
 </ul>
 
-<p>Exclude some XMP elements, for example to print all XMP elements, except for the "Creator Email":</p>
+<p>Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":</p>
 
-<pre><code>[xmp id="101" exclude="Creator Email"]
+<pre><code>[xmp id="101" exclude="creator email"]
 </code></pre>
 
 <ul>
 <li><code>show_title</code> (defaults to "yes")</li>
 </ul>
 
-<p>Toggle printing of the XMP element title, for example only prints the <code>&lt;dd&gt;</code> values, not the <code>&lt;dt&gt;</code> titles.</p>
+<p>Include / exclude the <code>&lt;dt&gt;</code> definition titles.</p>
 
 <pre><code>[xmp id="101" show_title="no"]
 </code></pre>
+
+<ul>
+<li><code>show_empty</code> (defaults to "no")</li>
+</ul>
+
+<p>Include / exclude empty <code>&lt;dd&gt;</code> definition values.</p>
 
 <ul>
 <li><code>not_keyword</code> (defaults to none)</li>

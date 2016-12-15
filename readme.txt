@@ -49,8 +49,16 @@ The plugin reads image files *progressively* (small chunks at a time) to extract
 `
 global $adobeXMP;
 
-/* $id can be a media library image id, or nextgen gallery 
- * image id in the form of ngg-##.
+/*
+ * Some default class properties can be changed.
+ */
+$adobeXMP->use_cache = true;	// default
+$adobeXMP->max_size = 512000;	// default
+$adobeXMP->chunk_size = 65536;	// default
+
+/*
+ * $id can be a WordPress Media Library image ID,
+ * or NextGEN Gallery image ID in the form of ngg-##.
  */
 $image_xmp = $adobeXMP->get_xmp( $id );
 
@@ -83,21 +91,23 @@ The shortcode can also take a few additional arguments:
 
 Define which XMP elements to include, for example:
 
-`[xmp id="101" include="Creator,Creator Email"]`
-
-Please note that the `include` values are **case sensitive**.
+`[xmp id="101" include="creator,creator email"]`
 
 * `exclude` (defaults to none)
 
-Exclude some XMP elements, for example to print all XMP elements, except for the "Creator Email":
+Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":
 
-`[xmp id="101" exclude="Creator Email"]`
+`[xmp id="101" exclude="creator email"]`
 
 * `show_title` (defaults to "yes")
 
-Toggle printing of the XMP element title, for example only prints the `<dd>` values, not the `<dt>` titles.
+Include / exclude the `<dt>` definition titles.
 
 `[xmp id="101" show_title="no"]`
+
+* `show_empty` (defaults to "no")
+
+Include / exclude empty `<dd>` definition values.
 
 * `not_keyword` (defaults to none)
 
@@ -167,16 +177,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.3.0-dev1 (TBD)**
+**Version 1.3.0-1 (2016/12/16)**
 
 * *New Features*
 	* None
 * *Improvements*
-	* None
+	* Added a new shortcode "show_empty" attribute.
+	* The shortcode "include" and "exclude" attribute values are now case insensitive.
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* None
+	* Refactored much of the plugin code.
 
 **Version 1.2.1-1 (2016/08/02)**
 
@@ -191,7 +202,7 @@ Note that the production stage level can be incremented on occasion for simple t
 
 == Upgrade Notice ==
 
-= 1.2.1-1 =
+= 1.3.0-1 =
 
-(2016/08/02) Maintenance release.
+(2016/12/16) Added a new shortcode "show_empty" attribute. The shortcode "include" and "exclude" attribute values are now case insensitive. Refactored much of the plugin code.
 

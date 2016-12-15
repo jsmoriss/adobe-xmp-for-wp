@@ -67,7 +67,9 @@
 <li>Hierarchical Keywords</li>
 </ul>
 
-<p>The plugin reads image files <em>progressively</em> to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also <em>cached on disk</em> to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the <code>$adobeXMP</code> global <strong>class object</strong> in your template(s) or using an <code>[xmp]</code> <strong>shortcode</strong> in your Posts or Pages.</p>
+<p>The extracted XMP / IPTC data is <em>cached on disk</em> to improve performance and is refreshed if / when the original image is modified.</p>
+
+<p>You can use the plugin in one of two ways; calling a method in your theme template(s) or using the <code>[xmp]</code> shortcode in your content.</p>
 
 <blockquote>
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>
@@ -75,17 +77,17 @@
 
 <h4>Retrieve XMP data as an array</h4>
 
-<pre><code>global $adobeXMP;
+<pre><code>$adobeXMP =&amp; adobeXMPforWP::get_instance();
 
 /*
- * Some default class properties can be changed.
+ * Some default class properties can be modified.
  */
 $adobeXMP-&gt;use_cache = true;    // default
 $adobeXMP-&gt;max_size = 512000;   // default
 $adobeXMP-&gt;chunk_size = 65536;  // default
 
 /*
- * $id can be a WordPress Media Library image ID,
+ * The $id can be a WordPress Media Library image ID,
  * or NextGEN Gallery image ID in the form of ngg-##.
  */
 $image_xmp = $adobeXMP-&gt;get_xmp( $id );

@@ -62,7 +62,7 @@ $adobeXMP->chunk_size = 65536;	// default
  */
 $image_xmp = $adobeXMP->get_xmp( $id );
 
-echo 'Taken by ', $image_xmp['Creator'], "\n";
+echo '<p>Photograph by '.$image_xmp['Creator'].'</p>';
 `
 
 = Include a shortcode in your Post or Page =

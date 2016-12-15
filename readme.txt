@@ -67,6 +67,8 @@ $image_xmp = $adobeXMP->get_xmp( $id );
 echo '<p>Photograph by '.$image_xmp['Creator'].'</p>';
 `
 
+You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.
+
 = Include a shortcode in your Post or Page =
 
 `
@@ -189,7 +191,9 @@ Note that the production stage level can be incremented on occasion for simple t
 * *Bugfixes*
 	* None
 * *Developer Notes*
-	* Refactored much of the plugin code.
+	* Refactored much of the plugin code, including the shortcode class.
+	* Added a 'adobe_xmp_cache_dir' filter to modify the default cache directory.
+	* The `adobeXMPforWP::get_xmp()` method now includes a cache (as a class property variable) for the returned array. This improves performance for cases where `get_xmp()` is called two or more times for the same image ID in the same page load. The `get_xmp_raw()` method still saves the XMP / IPTC information on disk, provided the `use_cache` class property variable is true, which is valid so long as the cached file modified time is newer than the image modified time.
 
 **Version 1.2.1-1 (2016/08/02)**
 

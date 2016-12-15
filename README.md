@@ -65,6 +65,8 @@ $image_xmp = $adobeXMP-&gt;get_xmp( $id );
 echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
 </code></pre>
 
+<p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.</p>
+
 <h4>Include a shortcode in your Post or Page</h4>
 
 <pre><code>[xmp id="101,ngg-201"]

@@ -52,12 +52,10 @@ global $adobeXMP;
 /* $id can be a media library image id, or nextgen gallery 
  * image id in the form of ngg-##.
  */
-$xmp = $adobeXMP->get_xmp( $id );
+$image_xmp = $adobeXMP->get_xmp( $id );
 
-echo 'Taken by ', $xmp['Creator'], "\n";
+echo 'Taken by ', $image_xmp['Creator'], "\n";
 `
-
-[You can read more about the class methods here](https://surniaulula.com/2013/04/09/read-adobe-xmp-xml-in-php/).
 
 = Include a shortcode in your Post or Page =
 
@@ -169,14 +167,23 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
-**Version 1.2.1-1 (2016/08/02)**
-
-Maintenance release.
+**Version 1.3.0-dev1 (TBD)**
 
 * *New Features*
 	* None
 * *Improvements*
 	* None
+* *Bugfixes*
+	* None
+* *Developer Notes*
+	* None
+
+**Version 1.2.1-1 (2016/08/02)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* Maintenance release.
 * *Bugfixes*
 	* None
 * *Developer Notes*

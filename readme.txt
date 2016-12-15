@@ -13,7 +13,7 @@ Requires At Least: 3.7
 Tested Up To: 4.7
 Stable Tag: 1.3.0-1
 
-Read Adobe XMP / IPTC information, using a Shortcode or PHP Class, from Media Library and NextGEN Gallery images.
+Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery images, using a Shortcode or PHP Class Method.
 
 == Description ==
 
@@ -38,7 +38,7 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 * Keywords
 * Hierarchical Keywords
 
-The plugin reads image files *progressively* (small chunks at a time) to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also *cached on disk* to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the `$adobeXMP` global **class object** in your template(s) or using an `[xmp]` **shortcode** in your Posts or Pages.
+The plugin reads image files *progressively* to extract the embeded XMP meta data, instead of reading the whole file into memory as other image management plugins do. The extracted XMP data is also *cached on disk* to improve performance and is refreshed only if/when the original image is modified. You can use the plugin in one of two ways; calling a method from the `$adobeXMP` global **class object** in your template(s) or using an `[xmp]` **shortcode** in your Posts or Pages.
 
 <blockquote>
 <p>There are no settings to update or adjust &mdash; simply install and activate the plugin.</p>

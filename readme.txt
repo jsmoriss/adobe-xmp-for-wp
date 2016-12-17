@@ -181,6 +181,17 @@ Note that the production stage level can be incremented on occasion for simple t
 
 = Changelog / Release Notes =
 
+**Version 1.3.1-1 (2016/12/18)**
+
+* *New Features*
+	* None
+* *Improvements*
+	* None
+* *Bugfixes*
+	* Fixed the shortcode.php library filename in the wordpress.org SVN.
+* *Developer Notes*
+	* None
+
 **Version 1.3.0-1 (2016/12/16)**
 
 * *New Features*

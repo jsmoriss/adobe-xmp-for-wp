@@ -219,6 +219,10 @@ Note that the production stage level can be incremented on occasion for simple t
 
 == Upgrade Notice ==
 
+= 1.3.1-1 =
+
+(2016/12/18) Fixed the shortcode.php library filename in the wordpress.org SVN.
+
 = 1.3.0-1 =
 
 (2016/12/16) Added a new shortcode "show_empty" attribute. The shortcode "include" and "exclude" attribute values are now case insensitive. Refactored much of the plugin code.

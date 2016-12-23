@@ -51,10 +51,10 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		private $cache_dir = '';
 		private $cache_xmp = array();
 
-		private static $instance = null;
+		private static $instance;
 
 		public static function &get_instance() {
-			if ( self::$instance === null )
+			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
 		}

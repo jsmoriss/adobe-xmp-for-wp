@@ -20,10 +20,10 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 	class adobeXMPforWPShortcode {
 
-		private static $instance = null;
+		private static $instance;
 
 		public static function &get_instance() {
-			if ( self::$instance === null )
+			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
 		}

@@ -22,14 +22,14 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		private static $instance;
 
+		public function __construct() {
+        		add_shortcode( 'xmp', array( &$this, 'xmp_shortcode' ) );
+		}
+
 		public static function &get_instance() {
 			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
-		}
-
-		public function __construct() {
-        		add_shortcode( 'xmp', array( &$this, 'xmp_shortcode' ) );
 		}
 
 		public function xmp_shortcode( $atts, $content = null ) { 

@@ -53,15 +53,15 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		private static $instance;
 
+		public function __construct() {
+			add_action( 'init', array( &$this, 'init_plugin' ) );
+			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
+		}
+
 		public static function &get_instance() {
 			if ( ! isset( self::$instance ) )
 				self::$instance = new self;
 			return self::$instance;
-		}
-
-		public function __construct() {
-			add_action( 'init', array( &$this, 'init_plugin' ) );
-			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
 		}
 
 		public function init_plugin() {

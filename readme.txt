@@ -165,7 +165,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 = Repositories =
 
-* [GitHub](https://github.com/jsmoriss/adobe-xmp-for-wp)
+* [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
 * [WordPress.org](https://wordpress.org/plugins/adobe-xmp-for-wp/developers/)
 
 = Version Numbering Scheme =

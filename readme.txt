@@ -9,7 +9,7 @@ Donate Link: https://www.paypal.me/jsmoriss
 Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
 Contributors: jsmoriss
-Requires At Least: 3.7
+Requires At Least: 3.8
 Tested Up To: 4.7.2
 Stable Tag: 1.3.1-1
 

@@ -167,7 +167,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 * [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
 * [WordPress.org](https://wordpress.org/plugins/adobe-xmp-for-wp/developers/)
 
-= Version Numbering Scheme =
+= Version Numbering =
 
 Version components: `{major}.{minor}.{bugfix}-{stage}{level}`
 

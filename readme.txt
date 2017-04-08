@@ -178,49 +178,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = Changelog / Release Notes =
 
-**Version 1.3.1-1 (2016/12/18)**
+**Version 1.3.2 (2017/04/08)**
 
 * *New Features*
 	* None
 * *Improvements*
 	* None
 * *Bugfixes*
-	* Fixed the shortcode.php library filename in the wordpress.org SVN.
-* *Developer Notes*
-	* None
-
-**Version 1.3.0-1 (2016/12/16)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Added a new shortcode "show_empty" attribute.
-	* The shortcode "include" and "exclude" attribute values are now case insensitive.
-* *Bugfixes*
 	* None
 * *Developer Notes*
-	* Refactored much of the plugin code, including the shortcode class.
-	* Added a 'adobe_xmp_cache_dir' filter to modify the default cache directory.
-	* The `adobeXMPforWP::get_xmp()` method now includes a cache (as a class property variable) for the returned array. This improves performance for cases where `get_xmp()` is called two or more times for the same image ID in the same page load. The `get_xmp_raw()` method still saves the XMP / IPTC information on disk, provided the `use_cache` class property variable is true, which is valid so long as the cached file modified time is newer than the image modified time.
-
-**Version 1.2.1-1 (2016/08/02)**
-
-* *New Features*
-	* None
-* *Improvements*
-	* Maintenance release.
-* *Bugfixes*
-	* None
-* *Developer Notes*
-	* None
+	* Maintenance release - update to version numbering scheme.
+	* Dropped the package number from the production version string.
 
 == Upgrade Notice ==
 
-= 1.3.1-1 =
+= 1.3.2 =
 
-(2016/12/18) Fixed the shortcode.php library filename in the wordpress.org SVN.
-
-= 1.3.0-1 =
-
-(2016/12/16) Added a new shortcode "show_empty" attribute. The shortcode "include" and "exclude" attribute values are now case insensitive. Refactored much of the plugin code.
+(2017/04/08) Maintenance release - update to version numbering scheme.
 

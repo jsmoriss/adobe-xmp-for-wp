@@ -35,7 +35,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		public $max_size = 512000;	// maximum size read
 		public $chunk_size = 65536;	// read 64k at a time
 
-		private $is_avail = array();	// assoc array for function/class/method checks
+		private $avail = array();	// assoc array for function/class/method checks
 		private $cache_dir = '';
 		private $cache_xmp = array();
 
@@ -57,31 +57,34 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function init_plugin() {
-			$this->is_avail = $this->get_avail();
+			$this->avail = $this->get_avail();
 			$this->cache_dir = trailingslashit( apply_filters( 'adobe_xmp_cache_dir', 
 				dirname ( __FILE__ ).'/cache/' ) );
 			require_once ( dirname ( __FILE__ ).'/lib/shortcode.php' );
 		}
 
 		public function get_avail() {
-			return array(
-				'ngg' => class_exists( 'nggdb' ) && 
-					method_exists( 'nggdb', 'find_image' ) ? 
-						true : false,
-			);
+			$ret = array();
+			$ret['media']['ngg'] = class_exists( 'nggdb' ) && 
+				method_exists( 'nggdb', 'find_image' ) ? 
+					true : false;
+			return $ret;
 		}
 
 		public function get_xmp( $pid ) {
-			if ( isset( $this->cache_xmp[$pid] ) )
+			if ( isset( $this->cache_xmp[$pid] ) ) {
 				return $this->cache_xmp[$pid];
-			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' )
+			}
+			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' ) {
 				return $this->cache_xmp[$pid] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
-			else return $this->cache_xmp[$pid] = $this->get_media_xmp( $pid, false );
+			} else {
+				return $this->cache_xmp[$pid] = $this->get_media_xmp( $pid, false );
+			}
 		}
 
 		public function get_ngg_xmp( $pid ) {
 			$xmp_arr = array();
-			if ( ! empty( $this->is_avail['ngg'] ) ) {
+			if ( ! empty( $this->avail['media']['ngg'] ) ) {
 				global $nggdb;
 				$image = $nggdb->find_image( $pid );
 				if ( ! empty( $image->imagePath ) ) {

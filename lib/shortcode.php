@@ -13,8 +13,9 @@
  * Copyright 2012-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
-if ( ! defined( 'ABSPATH' ) ) 
+if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Sorry, you cannot call this webpage directly.' );
+}
 
 if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 

@@ -10,6 +10,7 @@ Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library,
 Contributors: jsmoriss
 Requires At Least: 3.7
 Tested Up To: 4.8.1
+Requires PHP: 5.3
 Stable Tag: 1.3.2
 
 Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery images, using a Shortcode or PHP Class Method.

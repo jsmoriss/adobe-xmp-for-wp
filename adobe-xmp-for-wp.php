@@ -49,8 +49,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
+			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self;
+			}
 			return self::$instance;
 		}
 
@@ -68,8 +69,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		public function get_avail() {
 			$ret = array();
 			$ret['media']['ngg'] = class_exists( 'nggdb' ) && 
-				method_exists( 'nggdb', 'find_image' ) ? 
-					true : false;
+				method_exists( 'nggdb', 'find_image' ) ? true : false;
 			return $ret;
 		}
 

@@ -44,7 +44,7 @@
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-<h4>Retrieve XMP data as an array</h4>
+<h4>Retrieve XMP Data as an Array</h4>
 
 <p><code><br />
     $adobeXMP =&amp; adobeXMPforWP::get_instance();</p>
@@ -69,7 +69,7 @@ echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
 
 <p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.</p>
 
-<h4>Include a shortcode in your Post or Page</h4>
+<h4>Include a Shortcode in your Post or Page</h4>
 
 <p><code>[xmp id="101,ngg-201"]</code></p>
 

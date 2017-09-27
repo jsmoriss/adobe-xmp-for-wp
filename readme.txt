@@ -46,7 +46,7 @@ You can use the plugin in one of two ways; calling a method in your theme templa
 <p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
 </blockquote>
 
-= Retrieve XMP data as an array =
+= Retrieve XMP Data as an Array =
 
 `
 $adobeXMP =& adobeXMPforWP::get_instance();
@@ -69,7 +69,7 @@ echo '<p>Photograph by '.$image_xmp['Creator'].'</p>';
 
 You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.
 
-= Include a shortcode in your Post or Page =
+= Include a Shortcode in your Post or Page =
 
 `
 [xmp id="101,ngg-201"]

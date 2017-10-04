@@ -28,8 +28,9 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 		}
 
 		public static function &get_instance() {
-			if ( ! isset( self::$instance ) )
+			if ( ! isset( self::$instance ) ) {
 				self::$instance = new self;
+			}
 			return self::$instance;
 		}
 
@@ -51,12 +52,15 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			$pids = array();
 			$html = '';
 
-			if ( ! empty( $id ) ) 
+			if ( ! empty( $id ) )  {
 				$pids = array_map( 'trim', explode( ',', $id ) );
+			}
 
-			if ( ! empty( $ngg_id ) )
-				foreach ( explode( ',', $ngg_id ) as $pid )
+			if ( ! empty( $ngg_id ) ) {
+				foreach ( explode( ',', $ngg_id ) as $pid ) {
 					$pids[] = 'ngg-'.trim( $pid );
+				}
+			}
 
 			$include_dt = $this->explode_csv( $include );		// lowercase associative array
 			$exclude_dt = $this->explode_csv( $exclude );		// lowercase associative array
@@ -67,8 +71,9 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 			foreach ( $pids as $pid ) {
 
-				if ( empty( $pid ) )	// just in case
+				if ( empty( $pid ) ) {	// just in case
 					continue;
+				}
 
 				$image_xmp = $adobeXMP->get_xmp( $pid );
 
@@ -90,18 +95,19 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 				foreach ( array_keys( $image_xmp ) as $dt ) {
 
 					$dt_lower = strtolower( $dt );
-					if ( empty( $include_dt[$dt_lower] ) ||
-						! empty( $exclude_dt[$dt_lower] ) )
-							continue;
+					if ( empty( $include_dt[$dt_lower] ) || ! empty( $exclude_dt[$dt_lower] ) ) {
+						continue;
+					}
 
 					$css_class = 'xmp_'.sanitize_key( str_replace( ' ', '_', $dt_lower ) );
 
-					if ( ! $show_empty && 
-						empty( $image_xmp[$dt] ) )
-							continue;
+					if ( ! $show_empty && empty( $image_xmp[$dt] ) ) {
+						continue;
+					}
 
-					if ( $show_title ) 
+					if ( $show_title ) {
 						$html .= '<dt class="'.$css_class.'">'.$dt.'</dt>'."\n";
+					}
 	
 					// first dimension
 					if ( is_array( $image_xmp[$dt] ) ) {
@@ -117,8 +123,9 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 									case 'Hierarchical Keywords' :
 										if ( ! empty( $exclude_kw ) ) {
 											$kws = strtolower( implode( '-', array_values( $dd ) ) );
-											if ( ! empty( $exclude_kw[$kws] ) ) 
+											if ( ! empty( $exclude_kw[$kws] ) ) {
 												continue 2;
+											}
 										}
 										break;
 								}
@@ -145,8 +152,9 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 								break;
 							}
 						}
-					// value is a simple string
-					} else $html .= '<dd class="'.$css_class.'">'.$image_xmp[$dt].'</dd>'."\n";
+					} else {	// value is a simple string
+						$html .= '<dd class="'.$css_class.'">'.$image_xmp[$dt].'</dd>'."\n";
+					}
 				}
 				$html .= '</dl>'."\n";
 			}
@@ -164,8 +172,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		// converts string to boolean
 		private function get_bool( $mixed ) {
-			return is_string( $mixed ) ?
-				filter_var( $mixed, FILTER_VALIDATE_BOOLEAN ) : (bool) $mixed;
+			return is_string( $mixed ) ? filter_var( $mixed, FILTER_VALIDATE_BOOLEAN ) : (bool) $mixed;
 		}
 	}
 

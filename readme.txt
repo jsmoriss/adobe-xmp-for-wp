@@ -149,13 +149,13 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Frequently Asked Questions ==
 
-= Frequently Asked Questions =
+<h3>Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-= Additional Documentation =
+<h3>Additional Documentation</h3>
 
 * None
 
@@ -163,12 +163,12 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Changelog ==
 
-= Repositories =
+<h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
 * [WordPress.org](https://wordpress.org/plugins/adobe-xmp-for-wp/developers/)
 
-= Version Numbering =
+<h3>Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -177,7 +177,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
 
-= Changelog / Release Notes =
+<h3>Changelog / Release Notes</h3>
 
 **Version 1.3.2 (2017/04/08)**
 

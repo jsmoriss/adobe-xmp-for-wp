@@ -161,7 +161,7 @@ echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
 
 <h2>Frequently Asked Questions</h2>
 
-<h4>Frequently Asked Questions</h4>
+<h3>Frequently Asked Questions</h3>
 
 <ul>
 <li>None</li>
@@ -171,7 +171,7 @@ echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
 <h2>Other Notes</h2>
 
 <h3>Other Notes</h3>
-<h4>Additional Documentation</h4>
+<h3>Additional Documentation</h3>
 
 <ul>
 <li>None</li>

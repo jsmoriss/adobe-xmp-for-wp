@@ -197,4 +197,3 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 	$adobeXMP =& adobeXMPforWP::get_instance();
 }
 
-?>

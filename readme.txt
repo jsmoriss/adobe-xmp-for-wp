@@ -51,14 +51,14 @@ You can use the plugin in one of two ways; calling a method in your theme templa
 `
 $adobeXMP =& adobeXMPforWP::get_instance();
 
-/*
+/**
  * Some default class properties can be modified.
  */
 $adobeXMP->use_cache = true;	// default
 $adobeXMP->max_size = 512000;	// default
 $adobeXMP->chunk_size = 65536;	// default
 
-/*
+/**
  * The $id can be a WordPress Media Library image ID,
  * or NextGEN Gallery image ID in the form of ngg-##.
  */

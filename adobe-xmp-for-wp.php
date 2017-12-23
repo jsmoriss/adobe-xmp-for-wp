@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: JSM's Adobe XMP / IPTC for WordPress
  * Text Domain: adobe-xmp-for-wp

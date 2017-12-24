@@ -42,9 +42,7 @@ The extracted XMP / IPTC data is *cached on disk* to improve performance and is 
 
 You can use the plugin in one of two ways; calling a method in your theme template(s) or using the `[xmp]` shortcode in your content.
 
-<blockquote>
-<p>There are no plugin settings &mdash; simply install and activate the plugin.</p>
-</blockquote>
+There are no plugin settings &mdash; simply install and activate the plugin.
 
 = Retrieve XMP Data as an Array =
 

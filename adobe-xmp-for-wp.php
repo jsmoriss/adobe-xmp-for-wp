@@ -62,15 +62,13 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function init_plugin() {
 			$this->avail = $this->get_avail();
-			$this->cache_dir = trailingslashit( apply_filters( 'adobe_xmp_cache_dir', 
-				dirname ( __FILE__ ).'/cache/' ) );
-			require_once ( dirname ( __FILE__ ).'/lib/shortcode.php' );
+			$this->cache_dir = trailingslashit( apply_filters( 'adobe_xmp_cache_dir', dirname( __FILE__ ) . '/cache/' ) );
+			require_once ( dirname ( __FILE__ ) . '/lib/shortcode.php' );
 		}
 
 		public function get_avail() {
 			$ret = array();
-			$ret['media']['ngg'] = class_exists( 'nggdb' ) && 
-				method_exists( 'nggdb', 'find_image' ) ? true : false;
+			$ret['media']['ngg'] = class_exists( 'nggdb' ) && method_exists( 'nggdb', 'find_image' ) ? true : false;
 			return $ret;
 		}
 
@@ -113,7 +111,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			$start_tag = '<x:xmpmeta';
 			$end_tag = '</x:xmpmeta>';
-			$cache_file = $this->cache_dir.md5( $filepath ).'.xml';
+			$cache_file = $this->cache_dir.md5( $filepath ) . '.xml';
 			$xmp_raw = null; 
 
 			if ( $this->use_cache && 

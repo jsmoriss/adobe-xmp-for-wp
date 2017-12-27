@@ -91,7 +91,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 					}
 				}
 
-				$html .= "\n".'<dl class="xmp_shortcode">'."\n";
+				$html .= "\n" . '<dl class="xmp_shortcode">' . "\n";
 
 				foreach ( array_keys( $image_xmp ) as $dt ) {
 
@@ -107,7 +107,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 					}
 
 					if ( $show_title ) {
-						$html .= '<dt class="'.$css_class.'">'.$dt.'</dt>'."\n";
+						$html .= '<dt class="'.$css_class.'">'.$dt.'</dt>' . "\n";
 					}
 	
 					// first dimension
@@ -131,7 +131,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 										break;
 								}
 								$html .= '<dd class="'.$css_class.'">'.
-									implode( ' &gt; ', array_values( $dd ) ).'</dd>'."\n";
+									implode( ' &gt; ', array_values( $dd ) ).'</dd>' . "\n";
 
 							// print simple arrays as a comma delimited list, and break the foreach loop
 							} else {
@@ -147,17 +147,17 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 										break;
 								}
 								$html .= '<dd class="'.$css_class.'">'.
-									implode( ', ', array_values( $image_xmp[$dt] ) ).'</dd>'."\n";
+									implode( ', ', array_values( $image_xmp[$dt] ) ).'</dd>' . "\n";
 
 								// get another element from the $include array
 								break;
 							}
 						}
 					} else {	// value is a simple string
-						$html .= '<dd class="'.$css_class.'">'.$image_xmp[$dt].'</dd>'."\n";
+						$html .= '<dd class="'.$css_class.'">'.$image_xmp[$dt].'</dd>' . "\n";
 					}
 				}
-				$html .= '</dl>'."\n";
+				$html .= '</dl>' . "\n";
 			}
 			return $html;
 		}

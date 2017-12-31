@@ -18,10 +18,10 @@
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
- *	{major}		Major structural code changes / re-writes or incompatible API changes.
- *	{minor}		New functionality was added or improved in a backwards-compatible manner.
- *	{bugfix}	Backwards-compatible bug fixes or small improvements.
- *	{stage}.{level}	Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+ *      {major}		Major structural code changes / re-writes or incompatible API changes.
+ *      {minor}		New functionality was added or improved in a backwards-compatible manner.
+ *      {bugfix}	Backwards-compatible bug fixes or small improvements.
+ *      {stage}.{level}	Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
  *
  * Copyright 2012-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
  */

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This script is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License as published by the Free Software
@@ -11,7 +10,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * http://www.gnu.org/licenses/.
  * 
- * Copyright 2012-2017 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2012-2018 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

@@ -164,7 +164,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 <h3>Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
-* [WordPress.org](https://wordpress.org/plugins/adobe-xmp-for-wp/developers/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/adobe-xmp-for-wp/)
 
 <h3>Version Numbering</h3>
 

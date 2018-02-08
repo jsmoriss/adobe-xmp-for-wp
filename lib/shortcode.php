@@ -71,7 +71,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 			foreach ( $pids as $pid ) {
 
-				if ( empty( $pid ) ) {	// just in case
+				if ( empty( $pid ) ) {	// Just in case.
 					continue;
 				}
 

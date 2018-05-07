@@ -110,7 +110,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			$start_tag = '<x:xmpmeta';
 			$end_tag = '</x:xmpmeta>';
-			$cache_file = $this->cache_dir.md5( $filepath ) . '.xml';
+			$cache_file = $this->cache_dir . md5( $filepath ) . '.xml';
 			$xmp_raw = null; 
 
 			if ( $this->use_cache && 

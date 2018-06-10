@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/shortcode.php:81
+#: lib/shortcode.php:83
 msgid "No XMP found for image ID %s."
 msgstr ""
 

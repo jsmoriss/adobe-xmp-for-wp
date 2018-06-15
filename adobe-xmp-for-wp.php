@@ -45,7 +45,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function __construct() {
 			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
-			add_action( 'init', array( &$this, 'init_plugin' ) );
+			add_action( 'init', array( $this, 'init_plugin' ) );
 		}
 
 		public static function &get_instance() {

@@ -147,13 +147,13 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Frequently Asked Questions ==
 
-<h3>Frequently Asked Questions</h3>
+<h3 class="top">Frequently Asked Questions</h3>
 
 * None
 
 == Other Notes ==
 
-<h3>Additional Documentation</h3>
+<h3 class="top">Additional Documentation</h3>
 
 * None
 
@@ -161,7 +161,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Changelog ==
 
-<h3>Repositories</h3>
+<h3 class="top">Repositories</h3>
 
 * [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
 * [WordPress.org](https://plugins.trac.wordpress.org/browser/adobe-xmp-for-wp/)

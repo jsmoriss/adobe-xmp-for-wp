@@ -161,12 +161,7 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Changelog ==
 
-<h3 class="top">Repositories</h3>
-
-* [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
-* [WordPress.org](https://plugins.trac.wordpress.org/browser/adobe-xmp-for-wp/)
-
-<h3>Version Numbering</h3>
+<h3 class="top">Version Numbering</h3>
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
@@ -174,6 +169,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev < a (alpha) < b (beta) < rc (release candidate).
+
+<h3>Repositories</h3>
+
+* [GitHub](https://jsmoriss.github.io/adobe-xmp-for-wp/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/adobe-xmp-for-wp/)
 
 <h3>Changelog / Release Notes</h3>
 

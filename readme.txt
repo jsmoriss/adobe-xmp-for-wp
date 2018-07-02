@@ -147,16 +147,6 @@ To exclude a hierarchical keyword list, use hyphens between the keywords, for ex
 
 == Frequently Asked Questions ==
 
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None
-
-== Other Notes ==
-
-<h3 class="top">Additional Documentation</h3>
-
-* None
-
 == Screenshots ==
 
 == Changelog ==

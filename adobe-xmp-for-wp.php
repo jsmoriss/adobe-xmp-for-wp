@@ -109,6 +109,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function get_xmp_raw( $filepath ) {
+            if( !file_exists($filepath) ) return false;
 
 			$start_tag = '<x:xmpmeta';
 			$end_tag = '</x:xmpmeta>';

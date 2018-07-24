@@ -14,7 +14,7 @@
  * Requires At Least: 3.8
  * Tested Up To: 4.9.7
  * Version: 1.3.2
- * 
+ *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
  *      {major}         Major structural code changes / re-writes or incompatible API changes.
@@ -91,7 +91,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				$image = $nggdb->find_image( $pid );
 				if ( ! empty( $image->imagePath ) ) {
 					$xmp_raw = $this->get_xmp_raw( $image->imagePath );
-					if ( ! empty( $xmp_raw ) ) 
+					if ( ! empty( $xmp_raw ) )
 						$xmp_arr = $this->get_xmp_array( $xmp_raw );
 				}
 			}
@@ -109,6 +109,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function get_xmp_raw( $filepath ) {
+            if( !file_exists($filepath) ) return false;
 
 			$start_tag = '<x:xmpmeta';
 			$end_tag = '</x:xmpmeta>';
@@ -172,7 +173,8 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				'Location'		=> '<rdf:Description[^>]+?Iptc4xmpCore:Location="([^"]*)"',
 				'Title'			=> '<dc:title>\s*<rdf:Alt>\s*(.*?)\s*<\/rdf:Alt>\s*<\/dc:title>',
 				'Description'		=> '<dc:description>\s*<rdf:Alt>\s*(.*?)\s*<\/rdf:Alt>\s*<\/dc:description>',
-				'Creator'		=> '<dc:creator>\s*<rdf:Seq>\s*(.*?)\s*<\/rdf:Seq>\s*<\/dc:creator>',
+                'Rights'		=> '<dc:rights>\s*<rdf:Alt>\s*(.*?)\s*<\/rdf:Alt>\s*<\/dc:rights>',
+                'Creator'		=> '<dc:creator>\s*<rdf:Seq>\s*(.*?)\s*<\/rdf:Seq>\s*<\/dc:creator>',
 				'Keywords'		=> '<dc:subject>\s*<rdf:Bag>\s*(.*?)\s*<\/rdf:Bag>\s*<\/dc:subject>',
 				'Hierarchical Keywords'	=> '<lr:hierarchicalSubject>\s*<rdf:Bag>\s*(.*?)\s*<\/rdf:Bag>\s*<\/lr:hierarchicalSubject>'
 			) as $key => $regex ) {

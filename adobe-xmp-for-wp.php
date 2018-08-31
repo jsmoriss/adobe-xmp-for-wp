@@ -33,11 +33,11 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 	class adobeXMPforWP {
 
-		public $use_cache = true;
-		public $max_size = 512000;	// maximum size read
-		public $chunk_size = 65536;	// read 64k at a time
+		public $use_cache  = true;
+		public $max_size   = 512000;	// Maximum size read.
+		public $chunk_size = 65536;	// Read 64k at a time.
 
-		private $avail = array();	// assoc array for function/class/method checks
+		private $avail     = array();	// Assoc array for function/class/method checks.
 		private $cache_dir = '';
 		private $cache_xmp = array();
 
@@ -62,8 +62,10 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function init_plugin() {
-			$this->avail = $this->get_avail();
+
+			$this->avail     = $this->get_avail();
 			$this->cache_dir = trailingslashit( apply_filters( 'adobe_xmp_cache_dir', dirname( __FILE__ ) . '/cache/' ) );
+
 			require_once ( dirname ( __FILE__ ) . '/lib/shortcode.php' );
 		}
 
@@ -74,9 +76,11 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function get_xmp( $pid ) {
+
 			if ( isset( $this->cache_xmp[$pid] ) ) {
 				return $this->cache_xmp[$pid];
 			}
+
 			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' ) {
 				return $this->cache_xmp[$pid] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
 			} else {
@@ -85,35 +89,50 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function get_ngg_xmp( $pid ) {
+
 			$xmp_arr = array();
+
 			if ( ! empty( $this->avail['media']['ngg'] ) ) {
+
 				global $nggdb;
+
 				$image = $nggdb->find_image( $pid );
+
 				if ( ! empty( $image->imagePath ) ) {
+
 					$xmp_raw = $this->get_xmp_raw( $image->imagePath );
-					if ( ! empty( $xmp_raw ) ) 
+
+					if ( ! empty( $xmp_raw ) ) {
 						$xmp_arr = $this->get_xmp_array( $xmp_raw );
+					}
 				}
 			}
+
 			return $xmp_arr;
 		}
 
 		public function get_media_xmp( $pid ) {
+
 			$xmp_arr = array();
+
 			if ( $filepath = get_attached_file( $pid ) ) {
+
 				$xmp_raw = $this->get_xmp_raw( get_attached_file( $pid ) );
-				if ( ! empty( $xmp_raw ) ) 
+
+				if ( ! empty( $xmp_raw ) ) {
 					$xmp_arr = $this->get_xmp_array( $xmp_raw );
+				}
 			}
+
 			return $xmp_arr;
 		}
 
 		public function get_xmp_raw( $filepath ) {
 
-			$start_tag = '<x:xmpmeta';
-			$end_tag = '</x:xmpmeta>';
+			$start_tag  = '<x:xmpmeta';
+			$end_tag    = '</x:xmpmeta>';
 			$cache_file = $this->cache_dir . md5( $filepath ) . '.xml';
-			$xmp_raw = null; 
+			$xmp_raw    = null; 
 
 			if ( $this->use_cache && 
 				file_exists( $cache_file ) && 
@@ -121,11 +140,12 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				$cache_fh = fopen( $cache_file, 'rb' ) ) {
 
 				$xmp_raw = fread( $cache_fh, filesize( $cache_file ) );
+
 				fclose( $cache_fh );
 
 			} elseif ( $file_fh = fopen( $filepath, 'rb' ) ) {
 
-				$chunk = '';
+				$chunk     = '';
 				$file_size = filesize( $filepath );
 
 				while ( ( $file_pos = ftell( $file_fh ) ) < $file_size  && $file_pos < $this->max_size ) {
@@ -136,26 +156,29 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 						if ( ( $start_pos = strpos( $chunk, $start_tag ) ) !== false ) {
 
-							$xmp_raw = substr( $chunk, $start_pos, 
-								$end_pos - $start_pos + strlen( $end_tag ) );
+							$xmp_raw = substr( $chunk, $start_pos, $end_pos - $start_pos + strlen( $end_tag ) );
 
-							if ( $this->use_cache && 
-								$cache_fh = fopen( $cache_file, 'wb' ) ) {
+							if ( $this->use_cache && $cache_fh = fopen( $cache_file, 'wb' ) ) {
 
 								fwrite( $cache_fh, $xmp_raw );
 								fclose( $cache_fh );
 							}
 						}
-						break;	// stop reading after finding the xmp data
+
+						break;	// Stop reading after finding the xmp data.
 					}
 				}
+
 				fclose( $file_fh );
 			}
+
 			return $xmp_raw;
 		}
 
 		public function get_xmp_array( $xmp_raw ) {
+
 			$xmp_arr = array();
+
 			foreach ( array(
 				'Creator Email'		=> '<Iptc4xmpCore:CreatorContactInfo[^>]+?CiEmailWork="([^"]*)"',
 				'Owner Name'		=> '<rdf:Description[^>]+?aux:OwnerName="([^"]*)"',
@@ -177,22 +200,30 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				'Hierarchical Keywords'	=> '<lr:hierarchicalSubject>\s*<rdf:Bag>\s*(.*?)\s*<\/rdf:Bag>\s*<\/lr:hierarchicalSubject>'
 			) as $key => $regex ) {
 
-				// get a single text string
+				/**
+				 * Get a single text string.
+				 */
 				$xmp_arr[$key] = preg_match( "/$regex/is", $xmp_raw, $match ) ? $match[1] : '';
 
-				// if string contains a list, then re-assign the variable as an array with the list elements
+				/**
+				 * If string contains a list, then re-assign the variable as an array with the list elements.
+				 */
 				$xmp_arr[$key] = preg_match_all( "/<rdf:li[^>]*>([^>]*)<\/rdf:li>/is", $xmp_arr[$key], $match ) ? $match[1] : $xmp_arr[$key];
 
-				// hierarchical keywords need to be split into a third dimension
+				/**
+				 * Hierarchical keywords need to be split into a third dimension.
+				 */
 				if ( ! empty( $xmp_arr[$key] ) && $key == 'Hierarchical Keywords' ) {
 					foreach ( $xmp_arr[$key] as $li => $val ) $xmp_arr[$key][$li] = explode( '|', $val );
 					unset ( $li, $val );
 				}
 			}
+
 			return $xmp_arr;
 		}
 	}
 
         global $adobeXMP;
+
 	$adobeXMP =& adobeXMPforWP::get_instance();
 }

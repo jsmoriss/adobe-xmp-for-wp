@@ -180,4 +180,3 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 	adobeXMPforWPShortcode::get_instance();
 }
-

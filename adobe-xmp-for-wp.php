@@ -214,7 +214,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				 * Hierarchical keywords need to be split into a third dimension.
 				 */
 				if ( ! empty( $xmp_arr[$key] ) && $key == 'Hierarchical Keywords' ) {
-					foreach ( $xmp_arr[$key] as $li => $val ) $xmp_arr[$key][$li] = explode( '|', $val );
+					foreach ( $xmp_arr[$key] as $li => $val ) {
+						$xmp_arr[$key][$li] = explode( '|', $val );
+					}
 					unset ( $li, $val );
 				}
 			}

@@ -152,9 +152,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 					$chunk .= fread( $file_fh, $this->chunk_size );
 
-					if ( ( $end_pos = strpos( $chunk, $end_tag ) ) !== false ) {
+					if ( false !== ( $end_pos = strpos( $chunk, $end_tag ) ) ) {
 
-						if ( ( $start_pos = strpos( $chunk, $start_tag ) ) !== false ) {
+						if ( false !== ( $start_pos = strpos( $chunk, $start_tag ) ) ) {
 
 							$xmp_raw = substr( $chunk, $start_pos, $end_pos - $start_pos + strlen( $end_tag ) );
 

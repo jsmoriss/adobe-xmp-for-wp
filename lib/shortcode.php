@@ -38,19 +38,22 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		public function xmp_shortcode( $atts, $content = null ) { 
 
-			// using extract method here turns each key in the merged array into its own variable
-			// $atts or the default array will not be modified after the call to shortcode_atts()
+			/**
+			 * Using extract method here turns each key in the merged array into its own variable
+			 * $atts or the default array will not be modified after the call to shortcode_atts().
+			 */
 			extract( shortcode_atts( array( 
-				'id' => null,
-				'ngg_id' => null,
-				'include' => 'all',
-				'exclude' => null,
+				'id'          => null,
+				'ngg_id'      => null,
+				'include'     => 'all',
+				'exclude'     => null,
 				'not_keyword' => null,
-				'show_title' => true,
-				'show_empty' => false,
+				'show_title'  => true,
+				'show_empty'  => false,
 			), $atts ) );
 
 			global $adobeXMP;
+
 			$pids = array();
 			$html = '';
 
@@ -164,16 +167,24 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 		}
 
 		private function explode_csv( $str ) {
+
 			$ret = array();
+
 			foreach ( explode( ',', $str ) as $val ) {
+
 				$val = trim( strtolower( $val ), '\'" ' );
-				$ret[$val] = true;
+
+				$ret[ $val ] = true;
 			}
+
 			return $ret;
 		}
 
-		// converts string to boolean
+		/**
+		 * Converts string to boolean.
+		 */
 		private function get_bool( $mixed ) {
+
 			return is_string( $mixed ) ? filter_var( $mixed, FILTER_VALIDATE_BOOLEAN ) : (bool) $mixed;
 		}
 	}

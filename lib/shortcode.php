@@ -63,16 +63,16 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 			if ( ! empty( $ngg_id ) ) {
 				foreach ( explode( ',', $ngg_id ) as $pid ) {
-					$pids[] = 'ngg-'.trim( $pid );
+					$pids[] = 'ngg-' . trim( $pid );
 				}
 			}
 
-			$include_dt = $this->explode_csv( $include );		// lowercase associative array
-			$exclude_dt = $this->explode_csv( $exclude );		// lowercase associative array
-			$exclude_kw = $this->explode_csv( $not_keyword );	// lowercase associative array
+			$include_dt = $this->explode_csv( $include );		// Lowercase associative array.
+			$exclude_dt = $this->explode_csv( $exclude );		// Lowercase associative array.
+			$exclude_kw = $this->explode_csv( $not_keyword );	// Lowercase associative array.
 
-			$show_title = $this->get_bool( $show_title );		// sanitize true/false
-			$show_empty = $this->get_bool( $show_empty );		// sanitize true/false
+			$show_title = $this->get_bool( $show_title );		// Sanitize true/false.
+			$show_empty = $this->get_bool( $show_empty );		// Sanitize true/false.
 
 			foreach ( $pids as $pid ) {
 
@@ -83,15 +83,20 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 				$image_xmp = $adobeXMP->get_xmp( $pid );
 
 				if ( empty( $image_xmp ) ) {
-					$html .= '<p class="xmp_error">'.sprintf( __( 'No XMP found for image ID %s.',
-						'adobe-xmp-for-wp' ), $pid ).'</p>';
+
+					$html .= '<p class="xmp_error">' . sprintf( __( 'No XMP found for image ID %s.',
+						'adobe-xmp-for-wp' ), $pid ) . '</p>';
+
 					continue;
 				}
 
 				if ( $include === 'all' ) {
+
 					foreach( array_keys( $image_xmp ) as $val ) {
+
 						$val = trim( strtolower( $val ), '\'" ' );
-						$include_dt[$val] = true;
+
+						$include_dt[ $val ] = true;
 					}
 				}
 
@@ -100,65 +105,94 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 				foreach ( array_keys( $image_xmp ) as $dt ) {
 
 					$dt_lower = strtolower( $dt );
-					if ( empty( $include_dt[$dt_lower] ) || ! empty( $exclude_dt[$dt_lower] ) ) {
+
+					if ( empty( $include_dt[ $dt_lower ] ) || ! empty( $exclude_dt[ $dt_lower ] ) ) {
 						continue;
 					}
 
-					$css_class = 'xmp_'.sanitize_key( str_replace( ' ', '_', $dt_lower ) );
+					$css_class = 'xmp_' . sanitize_key( str_replace( ' ', '_', $dt_lower ) );
 
-					if ( ! $show_empty && empty( $image_xmp[$dt] ) ) {
+					if ( ! $show_empty && empty( $image_xmp[ $dt ] ) ) {
 						continue;
 					}
 
 					if ( $show_title ) {
-						$html .= '<dt class="'.$css_class.'">'.$dt.'</dt>' . "\n";
+						$html .= '<dt class="' . $css_class . '">' . $dt . '</dt>' . "\n";
 					}
 	
-					// first dimension
-					if ( is_array( $image_xmp[$dt] ) ) {
+					/**
+					 * First dimension.
+					 */
+					if ( is_array( $image_xmp[ $dt ] ) ) {
 
-						// check for second dimension
-						foreach ( $image_xmp[$dt] as $dd ) {
+						/**
+						 * Check for second dimension.
+						 */
+						foreach ( $image_xmp[ $dt ] as $dd ) {
 
-							// second dimension arrays are printed with multiple <dd> tags
+							/**
+							 * Second dimension arrays are printed with multiple <dd> tags.
+							 */
 							if ( is_array( $dd ) ) {
 
 								switch ( $dt ) {
-									// check for hierarchical strings to ignore
+
+									/**
+									 * Check for hierarchical strings to ignore.
+									 */
 									case 'Hierarchical Keywords' :
+
 										if ( ! empty( $exclude_kw ) ) {
+
 											$kws = strtolower( implode( '-', array_values( $dd ) ) );
-											if ( ! empty( $exclude_kw[$kws] ) ) {
+
+											if ( ! empty( $exclude_kw[ $kws ] ) ) {
 												continue 2;
 											}
 										}
+
 										break;
 								}
-								$html .= '<dd class="'.$css_class.'">'.
-									implode( ' &gt; ', array_values( $dd ) ).'</dd>' . "\n";
 
-							// print simple arrays as a comma delimited list, and break the foreach loop
+								$html .= '<dd class="' . $css_class . '">' . 
+									implode( ' &gt; ', array_values( $dd ) ) . '</dd>' . "\n";
+
+							/**
+							 * Print simple arrays as a comma delimited list, and break the foreach loop.
+							 */
 							} else {
+
 								switch ( $dt ) {
+
 									case 'Keywords' :
+
 										if ( ! empty( $exclude_kw ) ) {
-											foreach ( $image_xmp[$dt] as $el => $val ) {
+											foreach ( $image_xmp[ $dt ] as $el => $val ) {
 												if ( ! empty( $exclude_kw[ strtolower( $val ) ] ) ) {
-													unset ( $image_xmp[$dt][$el] );
+													unset ( $image_xmp[ $dt ][ $el ] );
 												}
 											}
 										}
+
 										break;
 								}
-								$html .= '<dd class="'.$css_class.'">'.
-									implode( ', ', array_values( $image_xmp[$dt] ) ).'</dd>' . "\n";
 
-								// get another element from the $include array
+								$html .= '<dd class="' . $css_class . '">' . 
+									implode( ', ', array_values( $image_xmp[ $dt ] ) ) . '</dd>' . "\n";
+
+								/**
+								 * Get another element from the $include array.
+								 */
 								break;
 							}
 						}
-					} else {	// value is a simple string
-						$html .= '<dd class="'.$css_class.'">'.$image_xmp[$dt].'</dd>' . "\n";
+
+					/**
+					 * Value is a simple string.
+					 */
+					} else {
+
+						$html .= '<dd class="' . $css_class . '">' . $image_xmp[ $dt ] . '</dd>' . "\n";
 					}
 				}
 				$html .= '</dl>' . "\n";

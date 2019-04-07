@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 3.8
  * Tested Up To: 5.1.1
- * Version: 1.3.2
+ * Version: 1.3.3
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -44,8 +44,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		private static $instance;
 
 		public function __construct() {
-			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
 			add_action( 'init', array( $this, 'init_plugin' ) );
+			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
 		}
 
 		public static function &get_instance() {
@@ -58,6 +59,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public static function load_textdomain() {
+
 			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
 		}
 
@@ -70,21 +72,24 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 
 		public function get_avail() {
+
 			$ret = array();
-			$ret['media']['ngg'] = class_exists( 'nggdb' ) && method_exists( 'nggdb', 'find_image' ) ? true : false;
+
+			$ret[ 'media' ][ 'ngg' ] = class_exists( 'nggdb' ) && method_exists( 'nggdb', 'find_image' ) ? true : false;
+
 			return $ret;
 		}
 
 		public function get_xmp( $pid ) {
 
-			if ( isset( $this->cache_xmp[$pid] ) ) {
-				return $this->cache_xmp[$pid];
+			if ( isset( $this->cache_xmp[ $pid ] ) ) {
+				return $this->cache_xmp[ $pid ];
 			}
 
 			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' ) {
-				return $this->cache_xmp[$pid] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
+				return $this->cache_xmp[ $pid ] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
 			} else {
-				return $this->cache_xmp[$pid] = $this->get_media_xmp( $pid, false );
+				return $this->cache_xmp[ $pid ] = $this->get_media_xmp( $pid, false );
 			}
 		}
 
@@ -92,7 +97,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			$xmp_arr = array();
 
-			if ( ! empty( $this->avail['media']['ngg'] ) ) {
+			if ( ! empty( $this->avail[ 'media' ][ 'ngg' ] ) ) {
 
 				global $nggdb;
 
@@ -134,9 +139,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			$cache_file = $this->cache_dir . md5( $filepath ) . '.xml';
 			$xmp_raw    = null; 
 
-			if ( $this->use_cache && 
-				file_exists( $cache_file ) && 
-				filemtime( $cache_file ) > filemtime( $filepath ) && 
+			if ( $this->use_cache && file_exists( $cache_file ) && filemtime( $cache_file ) > filemtime( $filepath ) && 
 				$cache_fh = fopen( $cache_file, 'rb' ) ) {
 
 				$xmp_raw = fread( $cache_fh, filesize( $cache_file ) );
@@ -203,20 +206,22 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				/**
 				 * Get a single text string.
 				 */
-				$xmp_arr[$key] = preg_match( "/$regex/is", $xmp_raw, $match ) ? $match[1] : '';
+				$xmp_arr[ $key ] = preg_match( '/' . $regex . '/is', $xmp_raw, $match ) ? $match[1] : '';
 
 				/**
 				 * If string contains a list, then re-assign the variable as an array with the list elements.
 				 */
-				$xmp_arr[$key] = preg_match_all( "/<rdf:li[^>]*>([^>]*)<\/rdf:li>/is", $xmp_arr[$key], $match ) ? $match[1] : $xmp_arr[$key];
+				$xmp_arr[ $key ] = preg_match_all( '/<rdf:li[^>]*>([^>]*)<\/rdf:li>/is', $xmp_arr[ $key ], $match ) ? $match[1] : $xmp_arr[ $key ];
 
 				/**
 				 * Hierarchical keywords need to be split into a third dimension.
 				 */
-				if ( ! empty( $xmp_arr[$key] ) && $key == 'Hierarchical Keywords' ) {
-					foreach ( $xmp_arr[$key] as $li => $val ) {
-						$xmp_arr[$key][$li] = explode( '|', $val );
+				if ( ! empty( $xmp_arr[ $key ] ) && $key == 'Hierarchical Keywords' ) {
+
+					foreach ( $xmp_arr[ $key ] as $li => $val ) {
+						$xmp_arr[ $key ][ $li ] = explode( '|', $val );
 					}
+
 					unset ( $li, $val );
 				}
 			}

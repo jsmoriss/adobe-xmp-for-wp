@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 5.6
 Requires At Least: 3.8
 Tested Up To: 5.1.1
-Stable Tag: 1.3.2
+Stable Tag: 1.3.3
 
 Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery images, using a Shortcode or PHP Class Method.
 
@@ -167,7 +167,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.3.2 (2017/04/08)**
+**Version 1.3.3 (2019/04/07)**
 
 * *New Features*
 	* None.
@@ -176,11 +176,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * *Bugfixes*
 	* None.
 * *Developer Notes*
-	* Maintenance release.
+	* Maintenance release - minor code formatting changes.
 
 == Upgrade Notice ==
 
-= 1.3.2 =
+= 1.3.3 =
 
-(2017/04/08) Maintenance release.
+(2019/04/07) Maintenance release - minor code formatting changes.
 

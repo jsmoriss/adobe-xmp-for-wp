@@ -169,13 +169,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 **Version 1.3.3 (2019/04/07)**
 
-* *New Features*
+* **New Features**
 	* None.
-* *Improvements*
+* **Improvements**
 	* None.
-* *Bugfixes*
+* **Bugfixes**
 	* None.
-* *Developer Notes*
+* **Developer Notes**
 	* Maintenance release - minor code formatting changes.
 
 == Upgrade Notice ==

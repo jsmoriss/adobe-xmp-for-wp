@@ -65,10 +65,11 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function init_plugin() {
 
-			$this->avail     = $this->get_avail();
+			$this->avail = $this->get_avail();
+
 			$this->cache_dir = trailingslashit( apply_filters( 'adobe_xmp_cache_dir', dirname( __FILE__ ) . '/cache/' ) );
 
-			require_once ( dirname ( __FILE__ ) . '/lib/shortcode.php' );
+			require_once dirname ( __FILE__ ) . '/lib/shortcode.php';
 		}
 
 		public function get_avail() {

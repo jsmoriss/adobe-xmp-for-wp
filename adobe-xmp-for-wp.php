@@ -121,7 +121,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			$xmp_arr = array();
 
-			if ( $filepath = get_attached_file( $pid ) ) {
+			if ( $file_path = get_attached_file( $pid ) ) {
 
 				$xmp_raw = $this->get_xmp_raw( get_attached_file( $pid ) );
 
@@ -133,24 +133,24 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			return $xmp_arr;
 		}
 
-		public function get_xmp_raw( $filepath ) {
+		public function get_xmp_raw( $file_path ) {
 
 			$start_tag  = '<x:xmpmeta';
 			$end_tag    = '</x:xmpmeta>';
-			$cache_file = $this->cache_dir . md5( $filepath ) . '.xml';
+			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
 			$xmp_raw    = null; 
 
-			if ( $this->use_cache && file_exists( $cache_file ) && filemtime( $cache_file ) > filemtime( $filepath ) && 
+			if ( $this->use_cache && file_exists( $cache_file ) && filemtime( $cache_file ) > filemtime( $file_path ) && 
 				$cache_fh = fopen( $cache_file, 'rb' ) ) {
 
 				$xmp_raw = fread( $cache_fh, filesize( $cache_file ) );
 
 				fclose( $cache_fh );
 
-			} elseif ( $file_fh = fopen( $filepath, 'rb' ) ) {
+			} elseif ( $file_fh = fopen( $file_path, 'rb' ) ) {
 
 				$chunk     = '';
-				$file_size = filesize( $filepath );
+				$file_size = filesize( $file_path );
 
 				while ( ( $file_pos = ftell( $file_fh ) ) < $file_size  && $file_pos < $this->max_size ) {
 

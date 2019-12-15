@@ -8,7 +8,7 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
 Contributors: jsmoriss
-Requires PHP: 5.6
+Requires PHP: 5.5
 Requires At Least: 3.9
 Tested Up To: 5.3.1
 Stable Tag: 1.3.3

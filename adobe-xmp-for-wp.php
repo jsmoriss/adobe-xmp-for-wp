@@ -46,7 +46,8 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		public function __construct() {
 
 			add_action( 'init', array( $this, 'init_plugin' ) );
-			add_action( 'plugins_loaded', array( __CLASS__, 'load_textdomain' ) );
+
+			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
 		}
 
 		public static function &get_instance() {
@@ -58,7 +59,15 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			return self::$instance;
 		}
 
-		public static function load_textdomain() {
+		public static function init_textdomain() {
+
+			static $loaded = null;
+
+			if ( null !== $loaded ) {
+				return;
+			}
+
+			$loaded = true;
 
 			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
 		}

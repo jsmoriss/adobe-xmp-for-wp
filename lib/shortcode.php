@@ -21,7 +21,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 	class adobeXMPforWPShortcode {
 
-		private static $instance;
+		private static $instance = null;
 
 		public function __construct() {
         		add_shortcode( 'xmp', array( $this, 'xmp_shortcode' ) );
@@ -29,7 +29,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		public static function &get_instance() {
 
-			if ( ! isset( self::$instance ) ) {
+			if ( null === self::$instance ) {
 				self::$instance = new self;
 			}
 

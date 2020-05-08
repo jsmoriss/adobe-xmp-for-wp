@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.2
  * Tested Up To: 5.4.1
- * Version: 1.3.3
+ * Version: 1.4.0
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -93,12 +93,16 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		public function get_xmp( $pid ) {
 
 			if ( isset( $this->cache_xmp[ $pid ] ) ) {
+
 				return $this->cache_xmp[ $pid ];
 			}
 
 			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' ) {
+
 				return $this->cache_xmp[ $pid ] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
+
 			} else {
+
 				return $this->cache_xmp[ $pid ] = $this->get_media_xmp( $pid, false );
 			}
 		}
@@ -118,6 +122,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 					$xmp_raw = $this->get_xmp_raw( $image->imagePath );
 
 					if ( ! empty( $xmp_raw ) ) {
+
 						$xmp_arr = $this->get_xmp_array( $xmp_raw );
 					}
 				}
@@ -135,6 +140,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				$xmp_raw = $this->get_xmp_raw( get_attached_file( $pid ) );
 
 				if ( ! empty( $xmp_raw ) ) {
+
 					$xmp_arr = $this->get_xmp_array( $xmp_raw );
 				}
 			}
@@ -144,13 +150,18 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function get_xmp_raw( $file_path ) {
 
-			$start_tag  = '<x:xmpmeta';
-			$end_tag    = '</x:xmpmeta>';
-			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
-			$xmp_raw    = null; 
+			$start_tag = '<x:xmpmeta';
 
-			if ( $this->use_cache && file_exists( $cache_file ) && filemtime( $cache_file ) > filemtime( $file_path ) && 
-				$cache_fh = fopen( $cache_file, 'rb' ) ) {
+			$end_tag = '</x:xmpmeta>';
+
+			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
+
+			$xmp_raw = null; 
+
+			if ( $this->use_cache && 
+				file_exists( $cache_file ) && 
+					filemtime( $cache_file ) > filemtime( $file_path ) && 
+						$cache_fh = fopen( $cache_file, 'rb' ) ) {
 
 				$xmp_raw = fread( $cache_fh, filesize( $cache_file ) );
 
@@ -158,7 +169,8 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			} elseif ( $file_fh = fopen( $file_path, 'rb' ) ) {
 
-				$chunk     = '';
+				$chunk = '';
+
 				$file_size = filesize( $file_path );
 
 				while ( ( $file_pos = ftell( $file_fh ) ) < $file_size  && $file_pos < $this->max_size ) {
@@ -174,6 +186,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 							if ( $this->use_cache && $cache_fh = fopen( $cache_file, 'wb' ) ) {
 
 								fwrite( $cache_fh, $xmp_raw );
+
 								fclose( $cache_fh );
 							}
 						}
@@ -229,6 +242,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				if ( ! empty( $xmp_arr[ $key ] ) && $key == 'Hierarchical Keywords' ) {
 
 					foreach ( $xmp_arr[ $key ] as $li => $val ) {
+
 						$xmp_arr[ $key ][ $li ] = explode( '|', $val );
 					}
 

@@ -53,6 +53,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 

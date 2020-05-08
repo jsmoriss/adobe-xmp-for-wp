@@ -30,6 +30,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 		public static function &get_instance() {
 
 			if ( null === self::$instance ) {
+
 				self::$instance = new self;
 			}
 

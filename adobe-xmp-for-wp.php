@@ -26,6 +26,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'Sorry, you cannot call this webpage directly.' );
 }
 

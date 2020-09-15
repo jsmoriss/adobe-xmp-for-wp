@@ -12,7 +12,7 @@
  * Description: Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery images, using a Shortcode or PHP Class Method.
  * Requires PHP: 5.6
  * Requires At Least: 4.2
- * Tested Up To: 5.5
+ * Tested Up To: 5.5.1
  * Version: 1.4.0
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]

@@ -120,7 +120,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 					if ( $show_title ) {
 						$html .= '<dt class="' . $css_class . '">' . $dt . '</dt>' . "\n";
 					}
-	
+
 					/**
 					 * First dimension.
 					 */

@@ -13,7 +13,7 @@
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1
- * Version: 1.4.0
+ * Version: 1.5.0-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -48,7 +48,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			add_action( 'init', array( $this, 'init_plugin' ) );
 
-			add_action( 'plugins_loaded', array( __CLASS__, 'init_textdomain' ) );
+			add_action( 'plugins_loaded', array( $this, 'init_textdomain' ) );
 		}
 
 		public static function &get_instance() {
@@ -61,17 +61,18 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			return self::$instance;
 		}
 
-		public static function init_textdomain() {
+		public function init_textdomain() {
 
-			static $loaded = null;
+			static $local_cache = null;
 
-			if ( null !== $loaded ) {
-				return;
+			if ( null === $local_cache ) {
+
+				$local_cache = 'adobe-xmp-for-wp';
+
+				load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
 			}
 
-			$loaded = true;
-
-			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
+			return $local_cache;
 		}
 
 		public function init_plugin() {

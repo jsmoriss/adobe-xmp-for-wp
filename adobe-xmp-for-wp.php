@@ -104,10 +104,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 				return $this->cache_xmp[ $pid ] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
 
-			} else {
-
-				return $this->cache_xmp[ $pid ] = $this->get_media_xmp( $pid, false );
 			}
+
+			return $this->cache_xmp[ $pid ] = $this->get_media_xmp( $pid, false );
 		}
 
 		public function get_ngg_xmp( $pid ) {

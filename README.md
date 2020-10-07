@@ -37,7 +37,7 @@
 <li>Hierarchical Keywords</li>
 </ul>
 
-<p>The extracted XMP / IPTC data is <em>cached on disk</em> to improve performance and is refreshed if / when the original image is modified.</p>
+<p>The extracted XMP / IPTC data is cached on disk to improve performance and is refreshed if / when the original image is modified.</p>
 
 <p>You can use the plugin in one of two ways; calling a method in your theme template(s) or using the <code>[xmp]</code> shortcode in your content.</p>
 
@@ -51,22 +51,22 @@
 <pre><code>/**
  * Some default class properties can be modified.
  */
-$adobeXMP-&gt;use_cache = true;    // default
-$adobeXMP-&gt;max_size = 512000;   // default
-$adobeXMP-&gt;chunk_size = 65536;  // default
+$adobeXMP-&gt;use_cache  = true;   // Default.
+$adobeXMP-&gt;max_size   = 512000; // Default.
+$adobeXMP-&gt;chunk_size = 65536;  // Default.
 
 /**
  * The $id can be a WordPress Media Library image ID,
- * or NextGEN Gallery image ID in the form of ngg-##.
+ * or NextGEN Gallery image ID in the form of ngg-#.
  */
 $image_xmp = $adobeXMP-&gt;get_xmp( $id );
 
-echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
+echo '&lt;p&gt;Photograph by ' . $image_xmp[ 'Creator' ] . '&lt;/p&gt;';
 </code></pre>
 
 <p></code></p>
 
-<p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.</p>
+<p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.</p>
 
 <h4>Include a Shortcode in your Post or Page</h4>
 
@@ -80,8 +80,7 @@ echo '&lt;p&gt;Photograph by '.$image_xmp['Creator'].'&lt;/p&gt;';
     &lt;dt class="xmp_source"&gt;Source&lt;/dt&gt;
     &lt;dd class="xmp_source"&gt;Underwater Focus&lt;/dd&gt;
     &lt;dt class="xmp_hierarchical_keywords"&gt;Hierarchical Keywords&lt;/dt&gt;
-    &lt;dd class="xmp_hierarchical_keywords"&gt;What &amp;gt; Photography &amp;gt; 
-        Field of View &amp;gt; Wide-Angle &amp;gt; Fish-Eye&lt;/dd&gt;
+    &lt;dd class="xmp_hierarchical_keywords"&gt;What &amp;gt; Photography &amp;gt; Field of View &amp;gt; Wide-Angle &amp;gt; Fish-Eye&lt;/dd&gt;
     &lt;/dl&gt;</code></p>
 
 <p>The shortcode can also take a few additional arguments:</p>

@@ -38,7 +38,7 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 * Keywords
 * Hierarchical Keywords
 
-The extracted XMP / IPTC data is *cached on disk* to improve performance and is refreshed if / when the original image is modified.
+The extracted XMP / IPTC data is cached on disk to improve performance and is refreshed if / when the original image is modified.
 
 You can use the plugin in one of two ways; calling a method in your theme template(s) or using the `[xmp]` shortcode in your content.
 
@@ -52,20 +52,20 @@ $adobeXMP =& adobeXMPforWP::get_instance();
 /**
  * Some default class properties can be modified.
  */
-$adobeXMP->use_cache = true;	// default
-$adobeXMP->max_size = 512000;	// default
-$adobeXMP->chunk_size = 65536;	// default
+$adobeXMP->use_cache  = true;	// Default.
+$adobeXMP->max_size   = 512000;	// Default.
+$adobeXMP->chunk_size = 65536;	// Default.
 
 /**
  * The $id can be a WordPress Media Library image ID,
- * or NextGEN Gallery image ID in the form of ngg-##.
+ * or NextGEN Gallery image ID in the form of ngg-#.
  */
 $image_xmp = $adobeXMP->get_xmp( $id );
 
-echo '<p>Photograph by '.$image_xmp['Creator'].'</p>';
+echo '<p>Photograph by ' . $image_xmp[ 'Creator' ] . '</p>';
 `
 
-You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache directory.
+You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.
 
 = Include a Shortcode in your Post or Page =
 
@@ -82,8 +82,7 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 <dt class="xmp_source">Source</dt>
 <dd class="xmp_source">Underwater Focus</dd>
 <dt class="xmp_hierarchical_keywords">Hierarchical Keywords</dt>
-<dd class="xmp_hierarchical_keywords">What &gt; Photography &gt; 
-	Field of View &gt; Wide-Angle &gt; Fish-Eye</dd>
+<dd class="xmp_hierarchical_keywords">What &gt; Photography &gt; Field of View &gt; Wide-Angle &gt; Fish-Eye</dd>
 </dl>
 `
 
@@ -167,7 +166,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0-dev.1 (TBD)**
+**Version 1.5.0 (2020/10/07)**
+
+Maintenance release.
 
 * **New Features**
 	* None.
@@ -177,27 +178,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* None.
-* **Requires At Least**
-	* PHP v5.6.
-	* WordPress v4.4.
-
-**Version 1.4.0 (2020/05/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Maintenance release - minor code formatting changes.
 * **Requires At Least**
 	* PHP v5.6.
 	* WordPress v4.4.
 
 == Upgrade Notice ==
 
-= 1.4.0 =
+= 1.5.0 =
 
-(2020/05/08) Maintenance release - minor code formatting changes.
+(2020/10/07) Maintenance release.
 

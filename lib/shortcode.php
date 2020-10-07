@@ -14,6 +14,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
+
 	die( 'Sorry, you cannot call this webpage directly.' );
 }
 
@@ -24,6 +25,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 		private static $instance = null;
 
 		public function __construct() {
+
         		add_shortcode( 'xmp', array( $this, 'xmp_shortcode' ) );
 		}
 
@@ -59,11 +61,14 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			$html = '';
 
 			if ( ! empty( $id ) )  {
+
 				$pids = array_map( 'trim', explode( ',', $id ) );
 			}
 
 			if ( ! empty( $ngg_id ) ) {
+
 				foreach ( explode( ',', $ngg_id ) as $pid ) {
+
 					$pids[] = 'ngg-' . trim( $pid );
 				}
 			}
@@ -78,6 +83,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			foreach ( $pids as $pid ) {
 
 				if ( empty( $pid ) ) {	// Just in case.
+
 					continue;
 				}
 
@@ -108,16 +114,19 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 					$dt_lower = strtolower( $dt );
 
 					if ( empty( $include_dt[ $dt_lower ] ) || ! empty( $exclude_dt[ $dt_lower ] ) ) {
+
 						continue;
 					}
 
 					$css_class = 'xmp_' . sanitize_key( str_replace( ' ', '_', $dt_lower ) );
 
 					if ( ! $show_empty && empty( $image_xmp[ $dt ] ) ) {
+
 						continue;
 					}
 
 					if ( $show_title ) {
+
 						$html .= '<dt class="' . $css_class . '">' . $dt . '</dt>' . "\n";
 					}
 
@@ -148,6 +157,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 											$kws = strtolower( implode( '-', array_values( $dd ) ) );
 
 											if ( ! empty( $exclude_kw[ $kws ] ) ) {
+
 												continue 2;
 											}
 										}
@@ -168,8 +178,11 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 									case 'Keywords' :
 
 										if ( ! empty( $exclude_kw ) ) {
+
 											foreach ( $image_xmp[ $dt ] as $el => $val ) {
+
 												if ( ! empty( $exclude_kw[ strtolower( $val ) ] ) ) {
+
 													unset ( $image_xmp[ $dt ][ $el ] );
 												}
 											}

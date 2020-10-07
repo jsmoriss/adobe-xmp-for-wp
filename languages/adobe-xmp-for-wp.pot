@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the JSM's Adobe XMP / IPTC for WordPress package.
 msgid ""
 msgstr ""
-"Project-Id-Version: JSM's Adobe XMP / IPTC for WordPress 1.5.0-dev.1\n"
+"Project-Id-Version: JSM's Adobe XMP / IPTC for WordPress 1.5.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/adobe-xmp-for-wp\n"
 "POT-Creation-Date: 2020-MO-DA HO:MI+ZONE\n"
 "MIME-Version: 1.0\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: lib/shortcode.php:88
+#: lib/shortcode.php:94
 msgid "No XMP found for image ID %s."
 msgstr ""
 

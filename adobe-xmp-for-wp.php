@@ -63,16 +63,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function init_textdomain() {
 
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache = 'adobe-xmp-for-wp';
-
-				load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
-			}
-
-			return $local_cache;
+			load_plugin_textdomain( 'adobe-xmp-for-wp', false, 'adobe-xmp-for-wp/languages/' );
 		}
 
 		public function init_plugin() {

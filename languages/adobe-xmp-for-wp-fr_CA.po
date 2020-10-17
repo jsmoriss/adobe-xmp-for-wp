@@ -1,0 +1,39 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: JSM's Adobe XMP / IPTC for WordPress 1.5.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/adobe-xmp-for-wp\n"
+"POT-Creation-Date: 2020-10-17 09:19-0700\n"
+"PO-Revision-Date: 2020-10-17 09:21-0700\n"
+"Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: lib/shortcode.php:94
+msgid "No XMP found for image ID %s."
+msgstr "Aucun XMP trouvé pour l'ID d'image %s."
+
+#. Plugin Name of the plugin/theme
+msgid "JSM's Adobe XMP / IPTC for WordPress"
+msgstr "Adobe XMP / IPTC pour WordPress de JSM"
+
+#. Plugin URI of the plugin/theme
+msgid "https://surniaulula.com/extend/plugins/adobe-xmp-for-wp/"
+msgstr "https://surniaulula.com/extend/plugins/adobe-xmp-for-wp/"
+
+#. Description of the plugin/theme
+msgid "Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method."
+msgstr "Fournit des informations Adobe XMP / IPTC à partir d'images de la médiathèque ou NextGEN Gallery à l'aide d'un code court ou d'une méthode de classe PHP."
+
+#. Author of the plugin/theme
+msgid "JS Morisset"
+msgstr "JS Morisset"
+
+#. Author URI of the plugin/theme
+msgid "https://surniaulula.com/"
+msgstr "https://surniaulula.com/"

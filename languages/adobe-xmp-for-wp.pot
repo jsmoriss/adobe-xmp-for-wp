@@ -26,8 +26,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery "
-"images, using a Shortcode or PHP Class Method."
+"Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery "
+"images using a shortcode or PHP class method."
 msgstr ""
 
 #. Author of the plugin/theme

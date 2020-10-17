@@ -9,7 +9,7 @@
  * Author URI: https://surniaulula.com/
  * License: GPLv3
  * License URI: http://www.gnu.org/licenses/gpl.txt
- * Description: Read Adobe XMP / IPTC information from Media Library and NextGEN Gallery images, using a Shortcode or PHP Class Method.
+ * Description: Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method.
  * Requires PHP: 5.6
  * Requires At Least: 4.4
  * Tested Up To: 5.5.1

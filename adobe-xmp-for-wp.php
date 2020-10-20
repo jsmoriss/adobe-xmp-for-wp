@@ -149,7 +149,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
 
-			$xmp_raw = null; 
+			$xmp_raw = null;
 
 			if ( $this->use_cache && 
 				file_exists( $cache_file ) && 

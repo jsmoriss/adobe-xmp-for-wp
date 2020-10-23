@@ -22,7 +22,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 	class adobeXMPforWPShortcode {
 
-		private static $instance = null;
+		private static $instance = null;	// adobeXMPforWPShortcode class object.
 
 		public function __construct() {
 

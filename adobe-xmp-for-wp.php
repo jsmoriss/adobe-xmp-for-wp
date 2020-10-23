@@ -42,7 +42,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		private $cache_dir = '';
 		private $cache_xmp = array();
 
-		private static $instance = null;
+		private static $instance = null;	// adobeXMPforWP class object.
 
 		public function __construct() {
 

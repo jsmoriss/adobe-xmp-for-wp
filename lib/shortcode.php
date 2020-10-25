@@ -39,7 +39,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			return self::$instance;
 		}
 
-		public function xmp_shortcode( $atts, $content = null ) { 
+		public function xmp_shortcode( $atts, $content = null ) {
 
 			/**
 			 * Using extract method here turns each key in the merged array into its own variable

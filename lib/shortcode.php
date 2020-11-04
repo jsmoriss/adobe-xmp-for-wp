@@ -154,7 +154,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 										if ( ! empty( $exclude_kw ) ) {
 
-											$kws = strtolower( implode( '-', array_values( $dd ) ) );
+											$kws = strtolower( implode( $glue = '-', array_values( $dd ) ) );
 
 											if ( ! empty( $exclude_kw[ $kws ] ) ) {
 
@@ -166,7 +166,8 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 								}
 
 								$html .= '<dd class="' . $css_class . '">' . 
-									implode( ' &gt; ', array_values( $dd ) ) . '</dd>' . "\n";
+									implode( $glue = ' &gt; ', array_values( $dd ) ) .
+										'</dd>' . "\n";
 
 							/**
 							 * Print simple arrays as a comma delimited list, and break the foreach loop.
@@ -192,7 +193,8 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 								}
 
 								$html .= '<dd class="' . $css_class . '">' . 
-									implode( ', ', array_values( $image_xmp[ $dt ] ) ) . '</dd>' . "\n";
+									implode( $glue = ', ', array_values( $image_xmp[ $dt ] ) ) .
+										'</dd>' . "\n";
 
 								/**
 								 * Get another element from the $include array.

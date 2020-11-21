@@ -143,13 +143,15 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 		public function get_xmp_raw( $file_path ) {
 
-			$start_tag = '<x:xmpmeta';
+			if ( ! file_exists( $file_path ) ) {	// Just in case.
 
-			$end_tag = '</x:xmpmeta>';
+				return false;
+			}
 
+			$start_tag  = '<x:xmpmeta';
+			$end_tag    = '</x:xmpmeta>';
 			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
-
-			$xmp_raw = null;
+			$xmp_raw    = null;
 
 			if ( $this->use_cache && 
 				file_exists( $cache_file ) && 
@@ -162,8 +164,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			} elseif ( $file_fh = fopen( $file_path, 'rb' ) ) {
 
-				$chunk = '';
-
+				$chunk     = '';
 				$file_size = filesize( $file_path );
 
 				while ( ( $file_pos = ftell( $file_fh ) ) < $file_size  && $file_pos < $this->max_size ) {

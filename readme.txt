@@ -166,14 +166,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0 (2020/10/07)**
-
-Maintenance release.
+**Version 1.6.0 (2020/11/21)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added support for the copyright &lt;dc:rights&gt;&lt;/dc:rights&gt; tag.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -184,7 +182,7 @@ Maintenance release.
 
 == Upgrade Notice ==
 
-= 1.5.0 =
+= 1.6.0 =
 
-(2020/10/07) Maintenance release.
+(2020/11/21) Added support for the copyright &lt;dc:rights&gt;&lt;/dc:rights&gt; tag.
 

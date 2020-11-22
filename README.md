@@ -33,6 +33,7 @@
 <li>Title</li>
 <li>Description</li>
 <li>Creator</li>
+<li>Rights</li>
 <li>Keywords</li>
 <li>Hierarchical Keywords</li>
 </ul>

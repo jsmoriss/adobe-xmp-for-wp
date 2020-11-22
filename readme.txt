@@ -35,6 +35,7 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 * Title
 * Description
 * Creator
+* Rights
 * Keywords
 * Hierarchical Keywords
 

@@ -78,28 +78,12 @@
 
 <h4>How do I retrieve XMP data as an array?</h4>
 
-<p>`<br />
-    $adobeXMP =&amp; adobeXMPforWP::get_instance();</p>
+<p>`   $adobeXMP =&amp; adobeXMPforWP::get_instance();</p>
 
-<pre><code>/**
- * Some default class properties can be modified.
- */
-$adobeXMP-&gt;use_cache  = true;   // Default.
-$adobeXMP-&gt;max_size   = 512000; // Default.
-$adobeXMP-&gt;chunk_size = 65536;  // Default.
+<pre><code>$xmp = $adobeXMP-&gt;get_xmp( $image_id );
 
-/**
- * The $id can be a WordPress Media Library image ID,
- * or NextGEN Gallery image ID in the form of ngg-#.
- */
-$image_xmp = $adobeXMP-&gt;get_xmp( $id );
-
-echo '&lt;p&gt;Photograph by ' . $image_xmp[ 'Creator' ] . '&lt;/p&gt;';
+echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';`
 </code></pre>
-
-<p>`</p>
-
-<p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.</p>
 
 <h4>How do I include a shortcode in a post or page?</h4>
 

@@ -73,21 +73,21 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = How do I retrieve XMP data as an array? =
 
-`$adobeXMP =& adobeXMPforWP::get_instance();
+<pre>
+$adobeXMP =& adobeXMPforWP::get_instance();
 
 $xmp = $adobeXMP->get_xmp( $image_id );
 
-echo '<p>Photograph by ' . $xmp[ 'Creator' ] . '</p>';`
+echo '<p>Photograph by ' . $xmp[ 'Creator' ] . '</p>';
+</pre>
 
 = How do I include a shortcode in a post or page? =
 
-`
-[xmp id="101,ngg-201"]
-`
+<pre>[xmp id="101,ngg-201"]</pre>
 
 This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list `<dl>` with a class name of `xmp_shortcode` that you can style for your needs. Each `<dt>` and `<dd>` element also has a style corresponding to it's title - for example, the "Creator" list element has an `xmp_creator` class name. Here's an example of the definition list HTML:
 
-`
+<pre>
 <dl class="xmp_shortcode">
 <dt class="xmp_credit">Credit</dt>
 <dd class="xmp_credit">JS Morisset</dd>
@@ -96,7 +96,7 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 <dt class="xmp_hierarchical_keywords">Hierarchical Keywords</dt>
 <dd class="xmp_hierarchical_keywords">What &gt; Photography &gt; Field of View &gt; Wide-Angle &gt; Fish-Eye</dd>
 </dl>
-`
+</pre>
 
 The shortcode can also take a few additional arguments:
 
@@ -104,19 +104,19 @@ The shortcode can also take a few additional arguments:
 
 Define which XMP elements to include, for example:
 
-`[xmp id="101" include="creator,creator email"]`
+<pre>[xmp id="101" include="creator,creator email"]</pre>
 
 * `exclude` (defaults to none)
 
 Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":
 
-`[xmp id="101" exclude="creator email"]`
+<pre>[xmp id="101" exclude="creator email"]</pre>
 
 * `show_title` (defaults to "yes")
 
 Include / exclude the `<dt>` definition titles.
 
-`[xmp id="101" show_title="no"]`
+<pre>[xmp id="101" show_title="no"]</pre>
 
 * `show_empty` (defaults to "no")
 
@@ -126,11 +126,11 @@ Include / exclude empty `<dd>` definition values.
 
 Exclude a list of (case incensitive) keywords, for example:
 
-`[xmp id="101" not_keyword="who,what,where"]`
+<pre>[xmp id="101" not_keyword="who,what,where"]</pre>
 
 To exclude a hierarchical keyword list, use hyphens between the keywords, for example:
 
-`[xmp id="101" not_keyword="who,what,where,who-people-unknown"]`
+<pre>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]</pre>
 
 == Screenshots ==
 

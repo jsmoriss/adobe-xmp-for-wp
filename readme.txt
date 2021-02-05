@@ -98,7 +98,7 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 &lt;/dl&gt;
 </pre>
 
-The shortcode can also take a few additional arguments:
+<p>The shortcode can also take a few additional arguments:</p>
 
 * `include` (defaults to "all")
 
@@ -120,7 +120,7 @@ Include / exclude the `<dt>` definition titles.
 
 * `show_empty` (defaults to "no")
 
-Include / exclude empty `<dd>` definition values.
+<p>Include / exclude empty <code>&lt;dd&gt;</code> definition values.</p>
 
 * `not_keyword` (defaults to none)
 

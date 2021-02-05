@@ -76,9 +76,7 @@
 
 <h2>Frequently Asked Questions</h2>
 
-<ul>
-<li>How do I retrieve XMP data as an array?</li>
-</ul>
+<h4>How do I retrieve XMP data as an array?</h4>
 
 <p>`<br />
     $adobeXMP =&amp; adobeXMPforWP::get_instance();</p>
@@ -103,9 +101,7 @@ echo '&lt;p&gt;Photograph by ' . $image_xmp[ 'Creator' ] . '&lt;/p&gt;';
 
 <p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.</p>
 
-<ul>
-<li>How do I include a shortcode in a post or page?</li>
-</ul>
+<h4>How do I include a shortcode in a post or page?</h4>
 
 <p><code>[xmp id="101,ngg-201"]</code></p>
 

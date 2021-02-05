@@ -73,26 +73,11 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 = How do I retrieve XMP data as an array? =
 
-`
-$adobeXMP =& adobeXMPforWP::get_instance();
+`$adobeXMP =& adobeXMPforWP::get_instance();
 
-/**
- * Some default class properties can be modified.
- */
-$adobeXMP->use_cache  = true;	// Default.
-$adobeXMP->max_size   = 512000;	// Default.
-$adobeXMP->chunk_size = 65536;	// Default.
+$xmp = $adobeXMP->get_xmp( $image_id );
 
-/**
- * The $id can be a WordPress Media Library image ID,
- * or NextGEN Gallery image ID in the form of ngg-#.
- */
-$image_xmp = $adobeXMP->get_xmp( $id );
-
-echo '<p>Photograph by ' . $image_xmp[ 'Creator' ] . '</p>';
-`
-
-You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.
+echo '<p>Photograph by ' . $xmp[ 'Creator' ] . '</p>';`
 
 = How do I include a shortcode in a post or page? =
 

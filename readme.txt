@@ -110,7 +110,7 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 
 * <code>show_title</code> (defaults to "yes")
 
-<p>Include / exclude the <code>&lt;dt&gt;</code> definition titles.</p>
+<p>Include / exclude the `&lt;dt&gt;` definition titles.</p>
 
 <pre>[xmp id="101" show_title="no"]</pre>
 

@@ -71,7 +71,7 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
 == Frequently Asked Questions ==
 
-* How do I retrieve XMP data as an array?
+= How do I retrieve XMP data as an array? =
 
 `
 $adobeXMP =& adobeXMPforWP::get_instance();
@@ -94,7 +94,7 @@ echo '<p>Photograph by ' . $image_xmp[ 'Creator' ] . '</p>';
 
 You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.
 
-* How do I include a shortcode in a post or page?
+= How do I include a shortcode in a post or page? =
 
 `
 [xmp id="101,ngg-201"]

@@ -44,9 +44,43 @@
 
 <p>There are no plugin settings &mdash; simply <em>install</em> and <em>activate</em> the plugin.</p>
 
-<h4>Retrieve XMP Data as an Array</h4>
 
-<p><code><br />
+<h2>Installation</h2>
+
+<h4>Automated Install</h4>
+
+<ol>
+<li>Go to the wp-admin/ section of your website.</li>
+<li>Select the <em>Plugins</em> menu item.</li>
+<li>Select the <em>Add New</em> sub-menu item.</li>
+<li>In the <em>Search</em> box, enter the plugin name.</li>
+<li>Click the <em>Search Plugins</em> button.</li>
+<li>Click the <em>Install Now</em> link for the plugin.</li>
+<li>Click the <em>Activate Plugin</em> link.</li>
+</ol>
+
+<h4>Semi-Automated Install</h4>
+
+<ol>
+<li>Download the plugin ZIP file.</li>
+<li>Go to the wp-admin/ section of your website.</li>
+<li>Select the <em>Plugins</em> menu item.</li>
+<li>Select the <em>Add New</em> sub-menu item.</li>
+<li>Click on <em>Upload</em> link (just under the Install Plugins page title).</li>
+<li>Click the <em>Browse...</em> button.</li>
+<li>Navigate your local folders / directories and choose the ZIP file you downloaded previously.</li>
+<li>Click on the <em>Install Now</em> button.</li>
+<li>Click the <em>Activate Plugin</em> link.</li>
+</ol>
+
+
+<h2>Frequently Asked Questions</h2>
+
+<ul>
+<li>How do I retrieve XMP data as an array?</li>
+</ul>
+
+<p>`<br />
     $adobeXMP =&amp; adobeXMPforWP::get_instance();</p>
 
 <pre><code>/**
@@ -65,11 +99,13 @@ $image_xmp = $adobeXMP-&gt;get_xmp( $id );
 echo '&lt;p&gt;Photograph by ' . $image_xmp[ 'Creator' ] . '&lt;/p&gt;';
 </code></pre>
 
-<p></code></p>
+<p>`</p>
 
 <p>You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.</p>
 
-<h4>Include a Shortcode in your Post or Page</h4>
+<ul>
+<li>How do I include a shortcode in a post or page?</li>
+</ul>
 
 <p><code>[xmp id="101,ngg-201"]</code></p>
 
@@ -127,39 +163,5 @@ echo '&lt;p&gt;Photograph by ' . $image_xmp[ 'Creator' ] . '&lt;/p&gt;';
 <p>To exclude a hierarchical keyword list, use hyphens between the keywords, for example:</p>
 
 <p><code>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]</code></p>
-
-
-<h2>Installation</h2>
-
-<h4>Automated Install</h4>
-
-<ol>
-<li>Go to the wp-admin/ section of your website.</li>
-<li>Select the <em>Plugins</em> menu item.</li>
-<li>Select the <em>Add New</em> sub-menu item.</li>
-<li>In the <em>Search</em> box, enter the plugin name.</li>
-<li>Click the <em>Search Plugins</em> button.</li>
-<li>Click the <em>Install Now</em> link for the plugin.</li>
-<li>Click the <em>Activate Plugin</em> link.</li>
-</ol>
-
-<h4>Semi-Automated Install</h4>
-
-<ol>
-<li>Download the plugin ZIP file.</li>
-<li>Go to the wp-admin/ section of your website.</li>
-<li>Select the <em>Plugins</em> menu item.</li>
-<li>Select the <em>Add New</em> sub-menu item.</li>
-<li>Click on <em>Upload</em> link (just under the Install Plugins page title).</li>
-<li>Click the <em>Browse...</em> button.</li>
-<li>Navigate your local folders / directories and choose the ZIP file you downloaded previously.</li>
-<li>Click on the <em>Install Now</em> button.</li>
-<li>Click the <em>Activate Plugin</em> link.</li>
-</ol>
-
-
-<h2>Frequently Asked Questions</h2>
-
-
 
 

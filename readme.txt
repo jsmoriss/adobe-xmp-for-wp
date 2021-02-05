@@ -45,7 +45,33 @@ You can use the plugin in one of two ways; calling a method in your theme templa
 
 There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 
-= Retrieve XMP Data as an Array =
+== Installation ==
+
+= Automated Install =
+
+1. Go to the wp-admin/ section of your website.
+1. Select the *Plugins* menu item.
+1. Select the *Add New* sub-menu item.
+1. In the *Search* box, enter the plugin name.
+1. Click the *Search Plugins* button.
+1. Click the *Install Now* link for the plugin.
+1. Click the *Activate Plugin* link.
+
+= Semi-Automated Install =
+
+1. Download the plugin ZIP file.
+1. Go to the wp-admin/ section of your website.
+1. Select the *Plugins* menu item.
+1. Select the *Add New* sub-menu item.
+1. Click on *Upload* link (just under the Install Plugins page title).
+1. Click the *Browse...* button.
+1. Navigate your local folders / directories and choose the ZIP file you downloaded previously.
+1. Click on the *Install Now* button.
+1. Click the *Activate Plugin* link.
+
+== Frequently Asked Questions ==
+
+* How do I retrieve XMP data as an array?
 
 `
 $adobeXMP =& adobeXMPforWP::get_instance();
@@ -68,7 +94,7 @@ echo '<p>Photograph by ' . $image_xmp[ 'Creator' ] . '</p>';
 
 You can also hook the 'adobe_xmp_cache_dir' filter to modify the default cache folder path.
 
-= Include a Shortcode in your Post or Page =
+* How do I include a shortcode in a post or page?
 
 `
 [xmp id="101,ngg-201"]
@@ -120,32 +146,6 @@ Exclude a list of (case incensitive) keywords, for example:
 To exclude a hierarchical keyword list, use hyphens between the keywords, for example:
 
 `[xmp id="101" not_keyword="who,what,where,who-people-unknown"]`
-
-== Installation ==
-
-= Automated Install =
-
-1. Go to the wp-admin/ section of your website.
-1. Select the *Plugins* menu item.
-1. Select the *Add New* sub-menu item.
-1. In the *Search* box, enter the plugin name.
-1. Click the *Search Plugins* button.
-1. Click the *Install Now* link for the plugin.
-1. Click the *Activate Plugin* link.
-
-= Semi-Automated Install =
-
-1. Download the plugin ZIP file.
-1. Go to the wp-admin/ section of your website.
-1. Select the *Plugins* menu item.
-1. Select the *Add New* sub-menu item.
-1. Click on *Upload* link (just under the Install Plugins page title).
-1. Click the *Browse...* button.
-1. Navigate your local folders / directories and choose the ZIP file you downloaded previously.
-1. Click on the *Install Now* button.
-1. Click the *Activate Plugin* link.
-
-== Frequently Asked Questions ==
 
 == Screenshots ==
 

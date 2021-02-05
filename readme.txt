@@ -102,19 +102,19 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 
 * <code>include</code> (defaults to "all")
 
-Define which XMP elements to include, for example:
+<p>Define which XMP elements to include, for example:</p>
 
 <pre>[xmp id="101" include="creator,creator email"]</pre>
 
 * <code>exclude</code> (defaults to none)
 
-Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":
+<p>Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":</p>
 
 <pre>[xmp id="101" exclude="creator email"]</pre>
 
 * <code>show_title</code> (defaults to "yes")
 
-Include / exclude the <code>&lt;dt&gt;</code> definition titles.
+<p>Include / exclude the <code>&lt;dt&gt;</code> definition titles.</p>
 
 <pre>[xmp id="101" show_title="no"]</pre>
 
@@ -124,11 +124,11 @@ Include / exclude the <code>&lt;dt&gt;</code> definition titles.
 
 * <code>not_keyword</code> (defaults to none)
 
-Exclude a list of (case incensitive) keywords, for example:
+<p>Exclude a list of (case incensitive) keywords, for example:</p>
 
 <pre>[xmp id="101" not_keyword="who,what,where"]</pre>
 
-To exclude a hierarchical keyword list, use hyphens between the keywords, for example:
+<p>To exclude a hierarchical keyword list, use hyphens between the keywords, for example:</p>
 
 <pre>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]</pre>
 

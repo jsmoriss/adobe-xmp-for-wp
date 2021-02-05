@@ -76,9 +76,9 @@ There are no plugin settings &mdash; simply *install* and *activate* the plugin.
 <pre>
 $adobeXMP =& adobeXMPforWP::get_instance();
 
-$xmp = $adobeXMP->get_xmp( $image_id );
+$xmp = $adobeXMP-&gt;get_xmp( $image_id );
 
-echo '<p>Photograph by ' . $xmp[ 'Creator' ] . '</p>';
+echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';
 </pre>
 
 = How do I include a shortcode in a post or page? =
@@ -88,14 +88,14 @@ echo '<p>Photograph by ' . $xmp[ 'Creator' ] . '</p>';
 This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list `<dl>` with a class name of `xmp_shortcode` that you can style for your needs. Each `<dt>` and `<dd>` element also has a style corresponding to it's title - for example, the "Creator" list element has an `xmp_creator` class name. Here's an example of the definition list HTML:
 
 <pre>
-<dl class="xmp_shortcode">
-<dt class="xmp_credit">Credit</dt>
-<dd class="xmp_credit">JS Morisset</dd>
-<dt class="xmp_source">Source</dt>
-<dd class="xmp_source">Underwater Focus</dd>
-<dt class="xmp_hierarchical_keywords">Hierarchical Keywords</dt>
-<dd class="xmp_hierarchical_keywords">What &gt; Photography &gt; Field of View &gt; Wide-Angle &gt; Fish-Eye</dd>
-</dl>
+&lt;dl class="xmp_shortcode"&gt;
+&lt;dt class="xmp_credit"&gt;Credit&lt;/dt&gt;
+&lt;dd class="xmp_credit"&gt;JS Morisset&lt;/dd&gt;
+&lt;dt class="xmp_source"&gt;Source&lt;/dt&gt;
+&lt;dd class="xmp_source"&gt;Underwater Focus&lt;/dd&gt;
+&lt;dt class="xmp_hierarchical_keywords"&gt;Hierarchical Keywords&lt;/dt&gt;
+&lt;dd class="xmp_hierarchical_keywords"&gt;What &gt; Photography &gt; Field of View &gt; Wide-Angle &gt; Fish-Eye&lt;/dd&gt;
+&lt;/dl&gt;
 </pre>
 
 The shortcode can also take a few additional arguments:

@@ -85,7 +85,7 @@ echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';
 
 <pre>[xmp id="101,ngg-201"]</pre>
 
-This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list `<dl>` with a class name of `xmp_shortcode` that you can style for your needs. Each `<dt>` and `<dd>` element also has a style corresponding to it's title - for example, the "Creator" list element has an `xmp_creator` class name. Here's an example of the definition list HTML:
+This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list <code>&lt;dl&gt;</code> with a class name of <code>xmp_shortcode</code> that you can style for your needs. Each <code>&lt;dt&gt;</code> and <code>&lt;dd&gt;</code> element also has a style corresponding to it's title - for example, the "Creator" list element has an <code>xmp_creator</code> class name. Here's an example of the definition list HTML:
 
 <pre>
 &lt;dl class="xmp_shortcode"&gt;
@@ -100,29 +100,29 @@ This shortcode prints all the XMP information for Media Library image ID "101" a
 
 <p>The shortcode can also take a few additional arguments:</p>
 
-* `include` (defaults to "all")
+* <code>include</code> (defaults to "all")
 
 Define which XMP elements to include, for example:
 
 <pre>[xmp id="101" include="creator,creator email"]</pre>
 
-* `exclude` (defaults to none)
+* <code>exclude</code> (defaults to none)
 
 Exclude some XMP elements, for example to print all XMP elements, except for the "creator email":
 
 <pre>[xmp id="101" exclude="creator email"]</pre>
 
-* `show_title` (defaults to "yes")
+* <code>show_title</code> (defaults to "yes")
 
-Include / exclude the `<dt>` definition titles.
+Include / exclude the <code>&lt;dt&gt;</code> definition titles.
 
 <pre>[xmp id="101" show_title="no"]</pre>
 
-* `show_empty` (defaults to "no")
+* <code>show_empty</code> (defaults to "no")
 
 <p>Include / exclude empty <code>&lt;dd&gt;</code> definition values.</p>
 
-* `not_keyword` (defaults to none)
+* <code>not_keyword</code> (defaults to none)
 
 Exclude a list of (case incensitive) keywords, for example:
 

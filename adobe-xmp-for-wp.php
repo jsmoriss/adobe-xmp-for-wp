@@ -91,10 +91,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				return $this->cache_xmp[ $pid ];
 			}
 
-			if ( is_string( $pid ) && substr( $pid, 0, 4 ) == 'ngg-' ) {
+			if ( is_string( $pid ) && 'ngg-' === substr( $pid, 0, 4 ) ) {
 
 				return $this->cache_xmp[ $pid ] = $this->get_ngg_xmp( substr( $pid, 4 ), false );
-
 			}
 
 			return $this->cache_xmp[ $pid ] = $this->get_media_xmp( $pid, false );

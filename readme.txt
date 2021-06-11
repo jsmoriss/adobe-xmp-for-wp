@@ -43,7 +43,7 @@ The extracted XMP / IPTC data is cached on disk to improve performance and is re
 
 You can use the plugin in one of two ways; calling a method in your theme template(s) or using the `[xmp]` shortcode in your content.
 
-There are no plugin settings &mdash; simply *install* and *activate* the plugin.
+There are no plugin settings - simply *install* and *activate* the plugin.
 
 = Need a Boost to your Social and Search Ranking? =
 

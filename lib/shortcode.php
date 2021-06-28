@@ -8,7 +8,7 @@
  * This script is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
- * http://www.gnu.org/licenses/.
+ * https://www.gnu.org/licenses/.
  * 
  * Copyright 2012-2021 Jean-Sebastien Morisset (https://surniaulula.com/)
  */

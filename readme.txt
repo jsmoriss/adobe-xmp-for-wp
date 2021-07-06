@@ -9,7 +9,7 @@ Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
 Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
 Contributors: jsmoriss
 Requires PHP: 7.0
-Requires At Least: 4.5
+Requires At Least: 5.0
 Tested Up To: 5.7.2
 Stable Tag: 1.6.0
 
@@ -164,7 +164,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Requires At Least**
 	* PHP v7.0.
-	* WordPress v4.5.
+	* WordPress v5.0.
 
 == Upgrade Notice ==
 

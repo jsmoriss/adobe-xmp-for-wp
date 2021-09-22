@@ -41,7 +41,7 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 
 The extracted XMP / IPTC data is cached on disk to improve performance and is refreshed if / when the original image is modified.
 
-You can use the plugin in one of two ways; calling a method in your theme template(s) or using the `[xmp]` shortcode in your content.
+You can use the plugin in one of two ways; calling a method in your theme template(s) or using the <code>&#91;xmp&#93;</code> shortcode in your content.
 
 There are no plugin settings - simply *install* and *activate* the plugin.
 

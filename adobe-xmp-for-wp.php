@@ -129,7 +129,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 
 			if ( $file_path = get_attached_file( $pid ) ) {
 
-				$xmp_raw = $this->get_xmp_raw( get_attached_file( $pid ) );
+				$xmp_raw = $this->get_xmp_raw( $file_path );
 
 				if ( ! empty( $xmp_raw ) ) {
 

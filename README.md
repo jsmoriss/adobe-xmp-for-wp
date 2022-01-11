@@ -44,7 +44,6 @@
 
 <p>There are no plugin settings - simply install and activate the plugin.</p>
 
-
 <h2>Installation</h2>
 
 <h4>Automated Install</h4>
@@ -72,7 +71,6 @@
 <li>Click on the <em>Install Now</em> button.</li>
 <li>Click the <em>Activate Plugin</em> link.</li>
 </ol>
-
 
 <h2>Frequently Asked Questions</h2>
 
@@ -142,5 +140,4 @@ echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';</pre>
 <p>To exclude a hierarchical keyword list, use hyphens between the keywords, for example:</p>
 
 <pre>[xmp id="101" not_keyword="who,what,where,who-people-unknown"]</pre>
-
 

@@ -4,12 +4,12 @@
  * the terms of the GNU General Public License as published by the Free Software
  * Foundation; either version 3 of the License, or (at your option) any later
  * version.
- * 
+ *
  * This script is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * https://www.gnu.org/licenses/.
- * 
+ *
  * Copyright 2012-2022 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			 * Using extract method here turns each key in the merged array into its own variable
 			 * $atts or the default array will not be modified after the call to shortcode_atts().
 			 */
-			extract( shortcode_atts( array( 
+			extract( shortcode_atts( array(
 				'id'          => null,
 				'ngg_id'      => null,
 				'include'     => 'all',
@@ -165,7 +165,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 										break;
 								}
 
-								$html .= '<dd class="' . $css_class . '">' . 
+								$html .= '<dd class="' . $css_class . '">' .
 									implode( $glue = ' &gt; ', array_values( $dd ) ) .
 										'</dd>' . "\n";
 
@@ -192,7 +192,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 										break;
 								}
 
-								$html .= '<dd class="' . $css_class . '">' . 
+								$html .= '<dd class="' . $css_class . '">' .
 									implode( $glue = ', ', array_values( $image_xmp[ $dt ] ) ) .
 										'</dd>' . "\n";
 

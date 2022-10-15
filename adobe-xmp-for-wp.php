@@ -14,7 +14,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.0
  * Version: 1.6.0
- * 
+ *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
  *      {major}         Major structural code changes and/or incompatible API changes (ie. breaking changes).
@@ -152,9 +152,9 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 			$cache_file = $this->cache_dir . md5( $file_path ) . '.xml';
 			$xmp_raw    = null;
 
-			if ( $this->use_cache && 
-				file_exists( $cache_file ) && 
-					filemtime( $cache_file ) > filemtime( $file_path ) && 
+			if ( $this->use_cache &&
+				file_exists( $cache_file ) &&
+					filemtime( $cache_file ) > filemtime( $file_path ) &&
 						$cache_fh = fopen( $cache_file, 'rb' ) ) {
 
 				$xmp_raw = fread( $cache_fh, filesize( $cache_file ) );

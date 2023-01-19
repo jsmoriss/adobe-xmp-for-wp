@@ -220,17 +220,17 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 				'Hierarchical Keywords'	=> '<lr:hierarchicalSubject>\s*<rdf:Bag>\s*(.*?)\s*<\/rdf:Bag>\s*<\/lr:hierarchicalSubject>'
 			) as $key => $regex ) {
 
-				/**
+				/*
 				 * Get a single text string.
 				 */
 				$xmp_arr[ $key ] = preg_match( '/' . $regex . '/is', $xmp_raw, $match ) ? $match[1] : '';
 
-				/**
+				/*
 				 * If string contains a list, then re-assign the variable as an array with the list elements.
 				 */
 				$xmp_arr[ $key ] = preg_match_all( '/<rdf:li[^>]*>([^>]*)<\/rdf:li>/is', $xmp_arr[ $key ], $match ) ? $match[1] : $xmp_arr[ $key ];
 
-				/**
+				/*
 				 * Hierarchical keywords need to be split into a third dimension.
 				 */
 				if ( ! empty( $xmp_arr[ $key ] ) && $key == 'Hierarchical Keywords' ) {

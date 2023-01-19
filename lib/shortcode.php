@@ -41,7 +41,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		public function xmp_shortcode( $atts, $content = null ) {
 
-			/**
+			/*
 			 * Using extract method here turns each key in the merged array into its own variable
 			 * $atts or the default array will not be modified after the call to shortcode_atts().
 			 */
@@ -130,24 +130,24 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 						$html .= '<dt class="' . $css_class . '">' . $dt . '</dt>' . "\n";
 					}
 
-					/**
+					/*
 					 * First dimension.
 					 */
 					if ( is_array( $image_xmp[ $dt ] ) ) {
 
-						/**
+						/*
 						 * Check for second dimension.
 						 */
 						foreach ( $image_xmp[ $dt ] as $dd ) {
 
-							/**
+							/*
 							 * Second dimension arrays are printed with multiple <dd> tags.
 							 */
 							if ( is_array( $dd ) ) {
 
 								switch ( $dt ) {
 
-									/**
+									/*
 									 * Check for hierarchical strings to ignore.
 									 */
 									case 'Hierarchical Keywords' :
@@ -169,7 +169,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 									implode( $glue = ' &gt; ', array_values( $dd ) ) .
 										'</dd>' . "\n";
 
-							/**
+							/*
 							 * Print simple arrays as a comma delimited list, and break the foreach loop.
 							 */
 							} else {
@@ -196,14 +196,14 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 									implode( $glue = ', ', array_values( $image_xmp[ $dt ] ) ) .
 										'</dd>' . "\n";
 
-								/**
+								/*
 								 * Get another element from the $include array.
 								 */
 								break;
 							}
 						}
 
-					/**
+					/*
 					 * Value is a simple string.
 					 */
 					} else {
@@ -230,7 +230,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 			return $ret;
 		}
 
-		/**
+		/*
 		 * Converts string to boolean.
 		 */
 		private function get_bool( $mixed ) {

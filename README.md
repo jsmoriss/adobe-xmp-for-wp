@@ -4,7 +4,7 @@
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>JSM&#039;s Adobe XMP / IPTC for WordPress</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.6.0</td></tr>
-<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
+<tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.2.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>

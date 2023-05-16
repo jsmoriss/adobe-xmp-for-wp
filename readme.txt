@@ -1,5 +1,5 @@
-=== JSM's Adobe XMP / IPTC for WordPress ===
-Plugin Name: JSM's Adobe XMP / IPTC for WordPress
+=== JSM Adobe XMP / IPTC for WordPress ===
+Plugin Name: JSM Adobe XMP / IPTC for WordPress
 Plugin Slug: adobe-xmp-for-wp
 Text Domain: adobe-xmp-for-wp
 Domain Path: /languages

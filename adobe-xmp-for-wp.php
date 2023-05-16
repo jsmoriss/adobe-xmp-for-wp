@@ -1,6 +1,6 @@
 <?php
 /*
- * Plugin Name: JSM's Adobe XMP / IPTC for WordPress
+ * Plugin Name: JSM Adobe XMP / IPTC for WordPress
  * Text Domain: adobe-xmp-for-wp
  * Domain Path: /languages
  * Plugin URI: https://surniaulula.com/extend/plugins/adobe-xmp-for-wp/

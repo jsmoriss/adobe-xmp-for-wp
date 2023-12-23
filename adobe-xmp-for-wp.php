@@ -240,7 +240,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 						$xmp_arr[ $key ][ $li ] = explode( '|', $val );
 					}
 
-					unset ( $li, $val );
+					unset( $li, $val );
 				}
 			}
 

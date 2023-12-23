@@ -184,7 +184,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 												if ( ! empty( $exclude_kw[ strtolower( $val ) ] ) ) {
 
-													unset ( $image_xmp[ $dt ][ $el ] );
+													unset( $image_xmp[ $dt ][ $el ] );
 												}
 											}
 										}

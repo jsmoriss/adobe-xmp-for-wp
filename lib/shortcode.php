@@ -10,7 +10,7 @@
  * PARTICULAR PURPOSE. See the GNU General Public License for more details at
  * https://www.gnu.org/licenses/.
  *
- * Copyright 2012-2023 Jean-Sebastien Morisset (https://surniaulula.com/)
+ * Copyright 2012-2024 Jean-Sebastien Morisset (https://surniaulula.com/)
  */
 
 if ( ! defined( 'ABSPATH' ) ) {

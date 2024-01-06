@@ -11,7 +11,7 @@
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Description: Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method.
  * Requires PHP: 7.2.34
- * Requires At Least: 5.5
+ * Requires At Least: 5.8
  * Tested Up To: 6.4.2
  * Version: 1.6.0
  *

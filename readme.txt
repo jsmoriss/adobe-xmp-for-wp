@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://jsmoriss.github.io/adobe-xmp-for-wp/assets/
-Tags: adobe, xmp, xmpmeta, iptc, rdf, xml, lightroom, photoshop, media, library, nextgen, gallery, image, shortcode, function, method, meta data
+Tags: photoshop, xmp, iptc, rdf, xml
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8

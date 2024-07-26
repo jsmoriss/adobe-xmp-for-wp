@@ -10,7 +10,7 @@ Tags: photoshop, xmp, iptc, rdf, xml
 Contributors: jsmoriss
 Requires PHP: 7.2.34
 Requires At Least: 5.8
-Tested Up To: 6.6
+Tested Up To: 6.6.1
 Stable Tag: 1.6.0
 
 Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method.

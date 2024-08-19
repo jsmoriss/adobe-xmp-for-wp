@@ -1,5 +1,3 @@
-
-Notice: Undefined variable: have_sched in /var/www/wpadm/wordpress/wp-content/plugins/wpsso/lib/loader.php on line 79
 <h1>JSM Adobe XMP / IPTC for WordPress</h1>
 
 <table>

@@ -12,7 +12,7 @@
  * Description: Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method.
  * Requires PHP: 7.4.33
  * Requires At Least: 5.9
- * Tested Up To: 6.7.1
+ * Tested Up To: 6.7.2
  * Version: 1.6.0
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]

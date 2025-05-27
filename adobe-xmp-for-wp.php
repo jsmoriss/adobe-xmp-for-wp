@@ -248,7 +248,7 @@ if ( ! class_exists( 'adobeXMPforWP' ) ) {
 		}
 	}
 
-        global $adobeXMP;
+	global $adobeXMP;
 
 	$adobeXMP =& adobeXMPforWP::get_instance();
 }

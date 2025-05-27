@@ -26,7 +26,7 @@ if ( ! class_exists( 'adobeXMPforWPShortcode' ) ) {
 
 		public function __construct() {
 
-        		add_shortcode( 'xmp', array( $this, 'xmp_shortcode' ) );
+			add_shortcode( 'xmp', array( $this, 'xmp_shortcode' ) );
 		}
 
 		public static function &get_instance() {

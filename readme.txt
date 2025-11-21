@@ -41,7 +41,7 @@ Retrieve the following Adobe XMP / IPTC information from images in the WordPress
 
 The extracted XMP / IPTC data is cached on disk to improve performance and is refreshed if / when the original image is modified.
 
-You can use the plugin in one of two ways; calling a method in your theme template(s) or using the <code>&#91;xmp&#93;</code> shortcode in your content.
+You can use the plugin in one of two ways; calling a method in your theme template(s) or using the <code>[xmp]</code> shortcode in your content.
 
 There are no plugin settings - simply install and activate the plugin.
 
@@ -73,9 +73,9 @@ There are no plugin settings - simply install and activate the plugin.
 
 = How do I retrieve XMP data as an array? =
 
-<pre>$adobeXMP =& adobeXMPforWP::get_instance();
+<pre>my $adobeXMP =& adobeXMPforWP::get_instance();
 
-$xmp = $adobeXMP-&gt;get_xmp( $image_id );
+my $xmp = $adobeXMP-&gt;get_xmp( $image_id );
 
 echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';</pre>
 
@@ -83,7 +83,7 @@ echo '&lt;p&gt;Photograph by ' . $xmp[ 'Creator' ] . '&lt;/p&gt;';</pre>
 
 <pre>[xmp id="101,ngg-201"]</pre>
 
-This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list &lt;dl&gt; with a class name of "xmp_shortcode" that you can style for your needs. Each &lt;dt&gt; and &lt;dd&gt; element also has a style corresponding to it's title - for example, the "Creator" list element has an "xmp_creator" class name. Here's an example of the definition list HTML:
+This shortcode prints all the XMP information for Media Library image ID "101" and NextGEN Gallery image ID "201". The XMP information is printed as a definition list &lt;dl&gt; with a CSS class name of "xmp_shortcode" that you can style for your needs. Each &lt;dt&gt; and &lt;dd&gt; element also has a style corresponding to it's title - for example, the "Creator" list element has an "xmp_creator" CSS class name. Here's an example of the definition list HTML:
 
 <pre>&lt;dl class="xmp_shortcode"&gt;
 &lt;dt class="xmp_credit"&gt;Credit&lt;/dt&gt;

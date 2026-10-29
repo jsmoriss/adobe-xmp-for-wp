@@ -15,7 +15,6 @@ msgstr ""
 #: lib/shortcode.php:94
 msgid "No XMP found for image ID %s."
 msgstr ""
-
 #. Plugin Name of the plugin/theme
 msgid "JSM Adobe XMP / IPTC for WordPress"
 msgstr ""
@@ -25,9 +24,7 @@ msgid "https://surniaulula.com/extend/plugins/adobe-xmp-for-wp/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid ""
-"Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery "
-"images using a shortcode or PHP class method."
+msgid "Provides Adobe XMP / IPTC information from Media Library or NextGEN Gallery images using a shortcode or PHP class method."
 msgstr ""
 
 #. Author of the plugin/theme
